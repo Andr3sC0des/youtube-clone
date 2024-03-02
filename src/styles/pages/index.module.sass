@@ -1,0 +1,16 @@
+.container
+  display: grid
+  grid-template-areas: "navbar navbar navbar" "sidebar main main"
+  grid-template-columns: 240px 1fr 1fr
+  grid-template-rows: 50px 1fr
+  & > section, header, main, aside
+    border: 1px solid #fff
+
+.navbar
+  grid-area: navbar
+
+.content
+  grid-area: main
+
+.sidebar
+  grid-area: sidebar
