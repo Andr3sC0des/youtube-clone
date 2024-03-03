@@ -137,6 +137,8 @@ const Index = () => {
   ]
 
   const tagsRef = useRef(null)
+  // Tal vez puedo escuchar si el scroll esta en 0 o en el final
+  // Si ocurre entonces desaparecer el boton de retroceder y mostrar el de avanzar y asi sucesivamente
   const handleToLeft = () => {
     if (tagsRef.current) {
       tagsRef.current.scrollLeft -= 200
