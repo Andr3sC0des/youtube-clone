@@ -20,10 +20,8 @@ export class LiteYTEmbed extends window.HTMLElement {
       ? `https://i.ytimg.com/vi_webp/${this.videoId}/maxresdefault.webp`
       : `https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg`
 
-    if (!this.isShort) {
-      LiteYTEmbed.addPrefetch('preload', this.posterUrl, 'image')
-      this.style.backgroundImage = `url("${this.posterUrl}")`
-    }
+    LiteYTEmbed.addPrefetch('preload', this.posterUrl, 'image')
+    this.style.backgroundImage = `url("${this.posterUrl}")`
 
     if (!playBtnEl) {
       playBtnEl = document.createElement('button')
@@ -68,6 +66,8 @@ export class LiteYTEmbed extends window.HTMLElement {
     const params = new URLSearchParams(this.getAttribute('params') || [])
     params.append('autoplay', this.autoplay ? '1' : '0')
     params.append('controls', '0')
+    params.append('loop', '1')
+    params.append('playlist', this.videoId)
 
     const iframeEl = document.createElement('iframe')
     iframeEl.width = 560

@@ -152,6 +152,12 @@ const ShareIcon = ({ width = '24', height = '24' }) => {
   )
 }
 
+const ShortLikeIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M8 21V9.282c0-.834.26-1.647.745-2.325L13 1l.551.331c1.153.691 1.705 2.065 1.351 3.362L14 8h5.192c.827 0 1.609.376 2.125 1.022.711.888.795 2.125.209 3.101L21 13l.165.413c.519 1.296.324 2.769-.514 3.885l-.151.202v.5c0 1.657-1.343 3-3 3H8ZM4.5 9C3.672 9 3 9.672 3 10.5v9c0 .828.672 1.5 1.5 1.5H7V9H4.5Z' /></svg>
+  )
+}
+
 const HorizontalDots = ({ width = '24', height = '24' }) => {
   return (
     <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M7.5 12c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm4.5-1.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z' /></svg>
@@ -167,6 +173,18 @@ const ClipIcon = ({ width = '24', height = '24' }) => {
 const LikeIcon = ({ width = '24', height = '24' }) => {
   return (
     <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox={`0 0 ${width} ${height}`} height={height} width={width} xmlns='http://www.w3.org/2000/svg'><path d='M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z' /></svg>
+  )
+}
+
+const CommentIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path clipRule='evenodd' d='M21 5c0-1.105-.895-2-2-2H5c-1.105 0-2 .895-2 2v12c0 1.105.895 2 2 2h12l3.146 3.146c.315.315.854.092.854-.353V5ZM7 9c0-.552.448-1 1-1h8c.552 0 1 .448 1 1s-.448 1-1 1H8c-.552 0-1-.448-1-1Zm1 3c-.552 0-1 .448-1 1s.448 1 1 1h5c.552 0 1-.448 1-1s-.448-1-1-1H8Z' fillRule='evenodd' /></svg>
+  )
+}
+
+const ShortUnlikeIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M16 3v11.718c0 .834-.26 1.647-.745 2.325L11 23l-.551-.331c-1.153-.691-1.705-2.065-1.351-3.362L10 16H4.808c-.827 0-1.609-.376-2.125-1.022-.711-.888-.795-2.125-.209-3.101L3 11l-.165-.413c-.519-1.296-.324-2.769.514-3.885L3.5 6.5V6c0-1.657 1.343-3 3-3H16Zm3 12c1.105 0 2-.895 2-2V5c0-1.105-.895-2-2-2h-2v12h2Z' /></svg>
   )
 }
 
@@ -194,5 +212,8 @@ export {
   DislikeIcon,
   ShareIcon,
   HorizontalDots,
-  ClipIcon
+  ClipIcon,
+  CommentIcon,
+  ShortLikeIcon,
+  ShortUnlikeIcon
 }

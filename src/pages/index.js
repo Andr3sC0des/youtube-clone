@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/pages/index.module.sass'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import Navbar from '@/components/Header/Navbar'
-import { ToLeftIcon, ToRightIcon } from '@/Icons/Icons'
+import { MenuIcon, ToLeftIcon, ToRightIcon } from '@/Icons/Icons'
 import { useEffect, useRef, useState } from 'react'
 import VideoCard from '@/components/Main/VideoCard'
 import Tag from '@/components/Main/Tag'
@@ -42,7 +42,11 @@ const Index = () => {
       </Head>
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
-          <Navbar setAllVideos={setAllVideos} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+          <Navbar setAllVideos={setAllVideos}>
+            <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
+              <MenuIcon />
+            </Button>
+          </Navbar>
         </header>
         <main className={styles.content}>
           <section className={isSidebarOpen ? styles.tags : styles.tags__collapsed}>

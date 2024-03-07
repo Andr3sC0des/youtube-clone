@@ -1,13 +1,20 @@
 import Navbar from '@/components/Header/Navbar'
-import { useEffect } from 'react'
+import { useContext, useEffect, useRef } from 'react'
 import styles from '@/styles/pages/watch.module.sass'
 import AllMiniVideoCards from '@/components/Main/AllMiniVideoCards'
 import VideoInfo from '@/components/Main/VideoInfo'
 import Head from 'next/head'
 import UseChannels from '@/hooks/useChannels'
+import { MenuIcon } from '@/Icons/Icons'
+import Button from '@/components/Button'
+import { popupContext } from '@/context/popupContext'
+import Sidebar from '@/components/Sidebar/Sidebar'
+import PopupMenu from '@/components/PopupMenu'
 
 const Index = ({ video }) => {
   const { allVideos } = UseChannels({})
+  const [popup, setPopup] = useContext(popupContext)
+  const buttonRef = useRef(null)
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
@@ -21,7 +28,14 @@ const Index = ({ video }) => {
       </Head>
       <section className={styles.container}>
         <header className={styles.navbar}>
-          <Navbar />
+          <Navbar>
+            <Button buttonRef={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
+              <MenuIcon />
+            </Button>
+          </Navbar>
+          <PopupMenu buttonRef={buttonRef}>
+            <Sidebar />
+          </PopupMenu>
         </header>
         <section className={styles.content}>
           <article className={`liteYoutube ${styles.video}`}>

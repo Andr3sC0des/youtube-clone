@@ -1,8 +1,13 @@
+import { CommentIcon, MenuIcon, SettingsIcon, ShareIcon, ShortLikeIcon, ShortUnlikeIcon } from '@/Icons/Icons'
+import Button from '@/components/Button'
 import Navbar from '@/components/Header/Navbar'
+import PopupMenu from '@/components/PopupMenu'
+import Sidebar from '@/components/Sidebar/Sidebar'
+import { popupContext } from '@/context/popupContext'
 import UseGetShorts from '@/hooks/useGetShorts'
 import styles from '@/styles/pages/short.module.sass'
 import { useRouter } from 'next/router'
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 const Index = ({ id }) => {
   const { allShorts } = UseGetShorts({})
@@ -20,6 +25,7 @@ const Index = ({ id }) => {
       const scrollPosition = container.scrollTop
       const videoHeight = container.clientHeight
       const currentIndex = Math.floor(scrollPosition / videoHeight)
+
       setCurrentVideo(allShorts[currentIndex].shorts.id)
 
       if (currentIndex < allShorts.length) {
@@ -39,24 +45,61 @@ const Index = ({ id }) => {
     const video = document.getElementById(id)
     video?.scrollIntoView({ behavior: 'smooth' })
   }, [allShorts])
+  const [popup, setPopup] = useContext(popupContext)
 
   return (
     <>
       <section className={styles.container}>
         <header className={styles.navbar}>
-          <Navbar />
+          <Navbar>
+            <Button onClick={() => setPopup(!popup)} type='menu'>
+              <MenuIcon />
+            </Button>
+          </Navbar>
         </header>
         <main ref={shortsRef} id='allShorts' className={styles.content}>
           {
            allShorts.map(short => {
              return (
-               <article id={short.shorts.id} key={short.shorts.id} className={`liteYoutube ${styles.video}`}>
-                 {
-                  currentVideo === short.shorts.id
-                    ? <lite-youtube videoid={short.shorts.id} isShort autoplay />
-                    : null
-                }
-               </article>
+               <section className={styles.videocontainer} key={short.shorts.id}>
+                 <article id={short.shorts.id} className={`liteYoutube ${styles.video}`}>
+                   {
+                   currentVideo === short.shorts.id
+                     ? <lite-youtube videoid={short.shorts.id} isShort autoplay />
+                     : null
+                  }
+                 </article>
+                 <aside className={styles.sidebar}>
+                   <div className={styles.button}>
+                     <Button type='short'>
+                       <ShortLikeIcon />
+                     </Button>
+                     <span>714K</span>
+                   </div>
+                   <div className={styles.button}>
+                     <Button type='short'>
+                       <ShortUnlikeIcon />
+                     </Button>
+                     <span>Dislike</span>
+                   </div>
+                   <div className={styles.button}>
+                     <Button type='short'>
+                       <CommentIcon />
+                     </Button>
+                     <span>1,331</span>
+                   </div>
+                   <div className={styles.button}>
+                     <Button type='short'>
+                       <ShareIcon />
+                     </Button>
+                     <span>Share</span>
+                   </div>
+                   <Button type='short'>
+                     <SettingsIcon />
+                   </Button>
+                   <img src='https://i.ytimg.com/vi_webp/HMluqSGag5E/maxresdefault.webp' alt='' />
+                 </aside>
+               </section>
              )
            })
           }

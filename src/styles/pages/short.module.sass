@@ -18,10 +18,34 @@
   scroll-snap-align: start
   margin-bottom: 3rem
 
+.button
+  text-align: center
+  display: flex
+  flex-direction: column
+  gap: 0.3rem
+
+.videocontainer
+  display: flex
+  justify-content: center
+  align-items: flex-start
+
+.sidebar
+  width: 70px
+  height: 560px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
+  gap: 1rem
+  &> img
+    width: 45px
+    height: 45px
+    border-radius: 0.5rem
+
 .content
-  margin: 0 auto
   grid-area: content
   height:  calc(100vh - 56px)
+  width: 100%
   overflow-y: scroll
   scroll-snap-type: y mandatory
   scrollbar-width: none
