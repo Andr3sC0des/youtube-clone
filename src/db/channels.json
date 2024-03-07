@@ -1,0 +1,99 @@
+[
+  {
+    "name": "LinkinPark",
+    "subscribers": "21.1M",
+    "videos": [
+      {
+        "id": "HMluqSGag5E",
+        "title": "Friendly Fire [Official Music Video] - Linkin Park",
+        "views": "4.7M",
+        "likes": "376K",
+        "publishedDate": "11 day ago",
+        "duration": "2:56",
+        "tag": "Alternative Rock, Music"
+      },
+      {
+        "id": "eVTXPUF4Oz4",
+        "title": "In The End [Official HD Music Video] - Linkin Park",
+        "views": "1,723,875,111",
+        "likes": "11M",
+        "publishedDate": "14 years ago",
+        "duration": "3:38",
+        "tag": "Alternative Rock, Music"
+      },
+      {
+        "id": "vjVkXlxsO8Q",
+        "title": "Papercut [Official HD Music Video] - Linkin Park",
+        "views": "273M",
+        "likes": "1.5M",
+        "publishedDate": "17 years ago",
+        "duration": "2:56",
+        "tag": "Alternative Rock, Music"
+      }
+    ],
+    "shorts": []
+  },
+  {
+    "name": "s4vitar",
+    "subscribers": "1.2M",
+    "videos": [
+      {
+        "id": "KhLyk9B69tg",
+        "title": "Así Roban Tu HUELLA con el SONIDO",
+        "views": "2,718,490",
+        "likes": "200k",
+        "publishedDate": "1 day ago",
+        "duration": "12:10",
+        "tag": "Cibersecurity"
+      }
+    ],
+    "shorts": []
+  },
+  {
+    "name": "midudev",
+    "subscribers": "1.2M",
+    "videos": [
+      {
+        "id": "Nfm7x2TLUyU",
+        "title": "Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…",
+        "views": "2,718,490",
+        "likes": "200k",
+        "publishedDate": "1 day ago",
+        "duration": "12:10",
+        "tag": "Web Development"
+      }
+    ],
+    "shorts": [
+      {
+        "id": "Ah7-PPjQ5Ls",
+        "title": "Te enseño 7 métodos de Array de JavaScript en un minuto #shorts ",
+        "likes": "18K",
+        "comments": "140"
+      },
+      {
+        "id": "xsZNz6AIlDU",
+        "title": "Extensión Imprescindible de Visual Studio Code",
+        "likes": "200k",
+        "comments": "140"
+      },
+      {
+        "id": "RxxyJk4h9pU",
+        "title": " MALAS PRÁCTICAS de JavaScript. ¡Evítalas!",
+        "likes": "200k",
+        "comments": "140"
+      },
+      {
+        "id": "AfW0tWyThPg",
+        "title": "MEJORA en PROGRAMACIÓN con estos 7 SITIOS",
+        "likes": "200k",
+        "comments": "140"
+      },
+      {
+        "id": "L26GjUDx6tY",
+        "title": "¡Deja de usar la etiqueta DIV para todo en HTML!",
+        "likes": "200k",
+        "comments": "140"
+      }
+    ]
+  }
+]

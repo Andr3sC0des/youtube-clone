@@ -12,9 +12,12 @@ body
   background: #0f0f0f
   color: #f0f0f0
   font-size: 14px
+  &> svg
+    pointer-events: none
 
 .liteYoutube 
   &> lite-youtube
+    border-radius: 1rem
     background-color: #000
     position: relative
     display: block
@@ -22,7 +25,8 @@ body
     background-position: center center
     background-size: cover
     cursor: pointer
-    max-width: 720px
+    height: 100%
+    max-width: 855px
     &::before
       content: ''
       display: block

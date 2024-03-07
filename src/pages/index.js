@@ -3,18 +3,24 @@ import styles from '@/styles/pages/index.module.sass'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import Navbar from '@/components/Header/Navbar'
 import { ToLeftIcon, ToRightIcon } from '@/Icons/Icons'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import VideoCard from '@/components/Main/VideoCard'
 import Tag from '@/components/Main/Tag'
 import Button from '@/components/Button'
-import { MockTags, MockVideos } from '@/utils/mockData'
+import UseChannels from '@/hooks/useChannels'
+import UseTags from '@/hooks/useTags'
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
-
+  const [selectedTag, setSelectedTag] = useState('All')
+  const [tags] = UseTags()
+  const { allVideos, setAllVideos } = UseChannels({ selectedTag })
   const tagsRef = useRef(null)
-  // Tal vez puedo escuchar si el scroll esta en 0 o en el final
-  // Si ocurre entonces desaparecer el boton de retroceder y mostrar el de avanzar y asi sucesivamente
+
+  useEffect(() => {
+    import('@/lib/LiteYTEmbed')
+  }, [])
+
   const handleToLeft = () => {
     if (tagsRef.current) {
       tagsRef.current.scrollLeft -= 200
@@ -36,7 +42,7 @@ const Index = () => {
       </Head>
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
-          <Navbar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
+          <Navbar setAllVideos={setAllVideos} isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />
         </header>
         <main className={styles.content}>
           <section className={isSidebarOpen ? styles.tags : styles.tags__collapsed}>
@@ -47,14 +53,13 @@ const Index = () => {
             </div>
             <article ref={tagsRef} className={styles.tags__list}>
               {
-              MockTags.map(tag => {
+              tags.map(tag => {
                 return (
-                  <Tag key={tag} title={tag} />
+                  <Tag key={tag} title={tag} selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
                 )
               })
               }
             </article>
-            {/* <div className={styles.tags__blur} /> */}
             <div className={`${styles.tags__arrow} ${styles.tags__arrow__right}`}>
               <Button onClick={() => handleToRight()} type='button'>
                 <ToRightIcon />
@@ -63,11 +68,19 @@ const Index = () => {
           </section>
           <section className={styles.videos}>
             {
-              MockVideos.map(video => {
-                return (
-                  <VideoCard key={video.id} {...video} />
-                )
-              })
+            allVideos.map(video => {
+              return (
+                <VideoCard
+                  id={video.video.id}
+                  key={video.video.id}
+                  channel={video.name}
+                  title={video.video.title}
+                  views={video.video.views}
+                  publishedDate={video.video.publishedDate}
+                  duration={video.video.duration}
+                />
+              )
+            })
             }
           </section>
           <section className={styles.shorts} />

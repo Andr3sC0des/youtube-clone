@@ -1,13 +1,18 @@
 .search
   border-radius: 2rem
-  overflow: hidden
   height: 40px
-  border: 1px solid rgb(48,48 ,48 )
   width: 600px
   display: flex
   justify-content: center
   align-items: center
+  background: #121212
+  outline: 1px solid rgb(48,48 ,48 )
+  &__icon
+    fill: #fff
+    margin-left: 1rem
+    display: block
   &__input
+    position: relative
     color: rgba(255, 255, 255, 0.88)
     padding-left: 1rem
     font-size: 1rem
@@ -15,12 +20,19 @@
     height: 100%
     width: 100%
     border: none
+    border-top-left-radius: 2rem
+    border-bottom-left-radius: 2rem
+    &:focus
+      outline: 1px solid rgb(62, 166, 255)
   &__button
     color: #fff
     background: #222
     border: none
     fill: #fff
-    height: 40px
+    height: 100%
     width: 65px
     cursor: pointer
+    border-top-right-radius: 2rem
+    border-bottom-right-radius: 2rem
+    outline: 1px solid rgb(48,48 ,48 )
     

@@ -1,9 +1,23 @@
 import styles from './Tag.module.sass'
 
-const Tag = ({ title }) => {
+const Tag = ({ title, setSelectedTag, selectedTag }) => {
+  const handleClasses = () => {
+    if (selectedTag === title) {
+      return (
+        [styles.tag, styles.tag__selected].join(' ')
+      )
+    } else {
+      return styles.tag
+    }
+  }
+
   return (
     <>
-      <button className={styles.tag}>{title}</button>
+      <button
+        onClick={() => setSelectedTag(title)}
+        className={handleClasses()}
+      >{title}
+      </button>
     </>
   )
 }

@@ -1,0 +1,35 @@
+$sidebar-width: 72px
+$sidebar-full-width: 240px
+$navbar-height: 56px
+
+.container
+  position: relative
+  display: grid
+  grid-template-areas: "navbar navbar" "content content"
+  grid-template-rows: $navbar-height 1fr
+
+.navbar
+  grid-area: navbar
+  width: 100%
+  position: fixed
+  background: #0f0f0f
+  height: $navbar-height
+  z-index: 1
+
+.content
+  padding: 32px 40px
+  grid-area: content
+  display: grid
+  grid-template-areas: "video videos" 
+  grid-template-columns: minmax(320px, 855px) 1fr
+  gap: 25px
+  grid-template-rows: 1fr
+  margin: 0 auto
+
+.video
+  grid-area: video
+  max-height: 480px
+
+.videos
+  grid-area: videos
+  width: fit-content

@@ -1,12 +1,17 @@
 import Link from 'next/link'
 import styles from './VideoCard.module.sass'
 import VideoDetails from './VideoDetails'
-const VideoCard = ({ url, thumbnail, title, views, publishedDate, channel, duration, avatar }) => {
+
+const VideoCard = ({ id, title, views, publishedDate, channel, duration }) => {
   return (
     <>
-      <Link href={url} className={styles.card} rel='noreferrer'>
+      <Link href={`/watch?v=${id}`} className={styles.card} rel='noreferrer'>
         <div className={styles.card__thumbnail}>
-          <img className={styles.card__img} src={thumbnail} alt={title} />
+          <div className={styles.card__img}>
+            <article className='liteYoutube'>
+              <lite-youtube videoid={id} activeButton autoplay />
+            </article>
+          </div>
           <span className={styles.card__duration}>{duration}</span>
         </div>
         <VideoDetails
@@ -14,7 +19,6 @@ const VideoCard = ({ url, thumbnail, title, views, publishedDate, channel, durat
           views={views}
           publishedDate={publishedDate}
           channel={channel}
-          avatar={avatar}
         />
       </Link>
     </>

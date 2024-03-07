@@ -1,0 +1,35 @@
+.container
+  display: grid
+  grid-template-rows: 56px 1fr
+
+
+.notfound
+  display: grid
+  place-content: center
+  height: calc(100vh - 56px)
+  text-align: center
+  &> img
+    max-width: 300px
+    display: block
+    margin: 0 auto
+  &> h1
+    text-align: center
+    line-height: 1.5
+    &> span
+      line-height: 1.5
+      display: block
+  &> a
+    text-decoration: none
+    border-radius: 2rem
+    font-size: 14px
+    color: rgb(62, 166, 255)
+    font-weight: 500
+    border: 1px solid #7c7c7c
+    max-width: 120px
+    height: 40px
+    display: flex
+    justify-content: center
+    align-items: center
+    margin: 0 auto
+    padding: 0rem 1rem
+    margin-top: 2rem

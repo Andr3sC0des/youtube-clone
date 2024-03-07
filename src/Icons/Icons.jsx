@@ -3,7 +3,7 @@ import styles from './Icons.module.sass'
 const MenuIcon = ({ height = '24', width = '24' }) => {
   return (
     <div className={styles.icon}>
-      <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z' /></svg>
+      <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M21 6H3V5h18v1zm0 5H3v1h18v-1zm0 6H3v1h18v-1z' /></svg>
     </div>
   )
 }
@@ -36,13 +36,13 @@ const YouTubeIcon = ({ width = '90px' }) => {
 
 const HomeIcon = ({ height = '24', width = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><g><path d='M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z' /></g></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><g><path d='M4 21V10.08l8-6.96 8 6.96V21h-6v-6h-4v6H4z' /></g></svg>
   )
 }
 
 const SearchIcon = ({ height = '24', width = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' focusable='false' height={height} width={width}>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox={`0 0 ${width} ${height}`} focusable='false' height={height} width={width}>
       <path fillRule='evenodd' clipRule='evenodd' d='M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11ZM16.2961 16.9961C14.8853 18.2431 13.031 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11C19 13.0274 18.2458 14.8786 17.0028 16.2885L20.5583 19.8441L20.9119 20.1976L20.2048 20.9047L19.8512 20.5512L16.2961 16.9961Z' />
     </svg>
   )
@@ -51,92 +51,122 @@ const SearchIcon = ({ height = '24', width = '24' }) => {
 const MicIcon = ({ height = '24', width = '24' }) => {
   return (
     <div className={styles.icon}>
-      <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z' /></svg>
+      <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M12 3c-1.66 0-3 1.37-3 3.07v5.86c0 1.7 1.34 3.07 3 3.07s3-1.37 3-3.07V6.07C15 4.37 13.66 3 12 3zm6.5 9h-1c0 3.03-2.47 5.5-5.5 5.5S6.5 15.03 6.5 12h-1c0 3.24 2.39 5.93 5.5 6.41V21h2v-2.59c3.11-.48 5.5-3.17 5.5-6.41z' /></svg>
     </div>
   )
 }
 
 const SettingsIcon = ({ height = '24', width = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M12 16.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zM10.5 12c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5zm0-6c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5-1.5.67-1.5 1.5z' /></svg>
   )
 }
 
 const UserIcon = ({ height = '24', width = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 1c4.96 0 9 4.04 9 9 0 1.42-.34 2.76-.93 3.96-1.53-1.72-3.98-2.89-7.38-3.03A3.996 3.996 0 0016 9c0-2.21-1.79-4-4-4S8 6.79 8 9c0 1.97 1.43 3.6 3.31 3.93-3.4.14-5.85 1.31-7.38 3.03C3.34 14.76 3 13.42 3 12c0-4.96 4.04-9 9-9zM9 9c0-1.65 1.35-3 3-3s3 1.35 3 3-1.35 3-3 3-3-1.35-3-3zm3 12c-3.16 0-5.94-1.64-7.55-4.12C6.01 14.93 8.61 13.9 12 13.9c3.39 0 5.99 1.03 7.55 2.98C17.94 19.36 15.16 21 12 21z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 1c4.96 0 9 4.04 9 9 0 1.42-.34 2.76-.93 3.96-1.53-1.72-3.98-2.89-7.38-3.03A3.996 3.996 0 0016 9c0-2.21-1.79-4-4-4S8 6.79 8 9c0 1.97 1.43 3.6 3.31 3.93-3.4.14-5.85 1.31-7.38 3.03C3.34 14.76 3 13.42 3 12c0-4.96 4.04-9 9-9zM9 9c0-1.65 1.35-3 3-3s3 1.35 3 3-1.35 3-3 3-3-1.35-3-3zm3 12c-3.16 0-5.94-1.64-7.55-4.12C6.01 14.93 8.61 13.9 12 13.9c3.39 0 5.99 1.03 7.55 2.98C17.94 19.36 15.16 21 12 21z' /></svg>
   )
 }
 
 const ShortsIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M10 14.65v-5.3L15 12l-5 2.65zm7.77-4.33-1.2-.5L18 9.06c1.84-.96 2.53-3.23 1.56-5.06s-3.24-2.53-5.07-1.56L6 6.94c-1.29.68-2.07 2.04-2 3.49.07 1.42.93 2.67 2.22 3.25.03.01 1.2.5 1.2.5L6 14.93c-1.83.97-2.53 3.24-1.56 5.07.97 1.83 3.24 2.53 5.07 1.56l8.5-4.5c1.29-.68 2.06-2.04 1.99-3.49-.07-1.42-.94-2.68-2.23-3.25zm-.23 5.86-8.5 4.5c-1.34.71-3.01.2-3.72-1.14-.71-1.34-.2-3.01 1.14-3.72l2.04-1.08v-1.21l-.69-.28-1.11-.46c-.99-.41-1.65-1.35-1.7-2.41-.05-1.06.52-2.06 1.46-2.56l8.5-4.5c1.34-.71 3.01-.2 3.72 1.14.71 1.34.2 3.01-1.14 3.72L15.5 9.26v1.21l1.8.74c.99.41 1.65 1.35 1.7 2.41.05 1.06-.52 2.06-1.46 2.56z' /></svg>
   )
 }
 
 const SubsIcon = ({ height = '24', width = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M10 18v-6l5 3-5 3zm7-15H7v1h10V3zm3 3H4v1h16V6zm2 3H2v12h20V9zM3 10h18v10H3V10z' /></svg>
   )
 }
 
 const YouIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='m11 7 6 3.5-6 3.5V7zm7 13H4V6H3v15h15v-1zm3-2H6V3h15v15zM7 17h13V4H7v13z' /></svg>
   )
 }
 
 const HistoryIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><g><path d='M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM22 12c0 5.51-4.49 10-10 10S2 17.51 2 12h1c0 4.96 4.04 9 9 9s9-4.04 9-9-4.04-9-9-9C8.81 3 5.92 4.64 4.28 7.38c-.11.18-.22.37-.31.56L3.94 8H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22 3.86 8.51 2 12 2c5.51 0 10 4.49 10 10z' /></g></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><g><path d='M14.97 16.95 10 13.87V7h2v5.76l4.03 2.49-1.06 1.7zM22 12c0 5.51-4.49 10-10 10S2 17.51 2 12h1c0 4.96 4.04 9 9 9s9-4.04 9-9-4.04-9-9-9C8.81 3 5.92 4.64 4.28 7.38c-.11.18-.22.37-.31.56L3.94 8H8v1H1.96V3h1v4.74c.04-.09.07-.17.11-.25.11-.22.23-.42.35-.63C5.22 3.86 8.51 2 12 2c5.51 0 10 4.49 10 10z' /></g></svg>
   )
 }
 
 const TrendIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M19 3.87v9.77C19 17.7 15.86 21 12 21s-7-3.3-7-7.37v-.13c0-1.06.22-2.13.62-3.09.5-1.19 1.29-2.21 2.27-2.97.85-.66 1.83-1.14 2.87-1.65.39-.19.77-.38 1.15-.58.36-.19.72-.38 1.08-.56v3.22l1.55-1.04L19 3.87M20 2l-6 4V3c-.85.44-1.7.88-2.55 1.33-1.41.74-2.9 1.34-4.17 2.32-1.13.87-2.02 2.05-2.58 3.37-.46 1.09-.7 2.29-.7 3.48v.14C4 18.26 7.58 22 12 22s8-3.74 8-8.36V2zM9.45 12.89 14 10v5.7c0 1.82-1.34 3.3-3 3.3s-3-1.47-3-3.3c0-1.19.58-2.23 1.45-2.81z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M19 3.87v9.77C19 17.7 15.86 21 12 21s-7-3.3-7-7.37v-.13c0-1.06.22-2.13.62-3.09.5-1.19 1.29-2.21 2.27-2.97.85-.66 1.83-1.14 2.87-1.65.39-.19.77-.38 1.15-.58.36-.19.72-.38 1.08-.56v3.22l1.55-1.04L19 3.87M20 2l-6 4V3c-.85.44-1.7.88-2.55 1.33-1.41.74-2.9 1.34-4.17 2.32-1.13.87-2.02 2.05-2.58 3.37-.46 1.09-.7 2.29-.7 3.48v.14C4 18.26 7.58 22 12 22s8-3.74 8-8.36V2zM9.45 12.89 14 10v5.7c0 1.82-1.34 3.3-3 3.3s-3-1.47-3-3.3c0-1.19.58-2.23 1.45-2.81z' /></svg>
   )
 }
 
 const MusicIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M12 4v9.38c-.73-.84-1.8-1.38-3-1.38-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V8h6V4h-7zM9 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm9-12h-5V5h5v2z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M12 4v9.38c-.73-.84-1.8-1.38-3-1.38-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V8h6V4h-7zM9 19c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm9-12h-5V5h5v2z' /></svg>
   )
 }
 
 const SportsIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M10 12H8v2H6v-2H4v-2h2V8h2v2h2v2zm7 .5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm3-3c0-.83-.67-1.5-1.5-1.5S17 8.67 17 9.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-3.03-4.35-4.5 2.53-.49.27-.49-.27-4.5-2.53L3 7.39v6.43l8.98 5.04 8.98-5.04V7.39l-3.99-2.24m0-1.15 4.99 2.8v7.6L11.98 20 2 14.4V6.8L6.99 4l4.99 2.8L16.97 4z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M10 12H8v2H6v-2H4v-2h2V8h2v2h2v2zm7 .5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm3-3c0-.83-.67-1.5-1.5-1.5S17 8.67 17 9.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-3.03-4.35-4.5 2.53-.49.27-.49-.27-4.5-2.53L3 7.39v6.43l8.98 5.04 8.98-5.04V7.39l-3.99-2.24m0-1.15 4.99 2.8v7.6L11.98 20 2 14.4V6.8L6.99 4l4.99 2.8L16.97 4z' /></svg>
   )
 }
 
 const LearningIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M16 21h-2.28c-.35.6-.98 1-1.72 1s-1.38-.4-1.72-1H8v-1h8v1zm4-11c0 2.96-1.61 5.54-4 6.92V19H8v-2.08C5.61 15.54 4 12.96 4 10c0-4.42 3.58-8 8-8s8 3.58 8 8zm-5 8v-1.66l.5-.29C17.66 14.8 19 12.48 19 10c0-3.86-3.14-7-7-7s-7 3.14-7 7c0 2.48 1.34 4.8 3.5 6.06l.5.28V18h6z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M16 21h-2.28c-.35.6-.98 1-1.72 1s-1.38-.4-1.72-1H8v-1h8v1zm4-11c0 2.96-1.61 5.54-4 6.92V19H8v-2.08C5.61 15.54 4 12.96 4 10c0-4.42 3.58-8 8-8s8 3.58 8 8zm-5 8v-1.66l.5-.29C17.66 14.8 19 12.48 19 10c0-3.86-3.14-7-7-7s-7 3.14-7 7c0 2.48 1.34 4.8 3.5 6.06l.5.28V18h6z' /></svg>
   )
 }
 
 const GamingIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M10 12H8v2H6v-2H4v-2h2V8h2v2h2v2zm7 .5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm3-3c0-.83-.67-1.5-1.5-1.5S17 8.67 17 9.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-3.03-4.35-4.5 2.53-.49.27-.49-.27-4.5-2.53L3 7.39v6.43l8.98 5.04 8.98-5.04V7.39l-3.99-2.24m0-1.15 4.99 2.8v7.6L11.98 20 2 14.4V6.8L6.99 4l4.99 2.8L16.97 4z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M10 12H8v2H6v-2H4v-2h2V8h2v2h2v2zm7 .5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm3-3c0-.83-.67-1.5-1.5-1.5S17 8.67 17 9.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5zm-3.03-4.35-4.5 2.53-.49.27-.49-.27-4.5-2.53L3 7.39v6.43l8.98 5.04 8.98-5.04V7.39l-3.99-2.24m0-1.15 4.99 2.8v7.6L11.98 20 2 14.4V6.8L6.99 4l4.99 2.8L16.97 4z' /></svg>
   )
 }
 
 const VerifiedIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zM9.8 17.3l-4.2-4.1L7 11.8l2.8 2.7L17 7.4l1.4 1.4-8.6 8.5z' /></svg>
   )
 }
 
 const ToRightIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='m9.4 18.4-.7-.7 5.6-5.6-5.7-5.7.7-.7 6.4 6.4-6.3 6.3z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='m9.4 18.4-.7-.7 5.6-5.6-5.7-5.7.7-.7 6.4 6.4-6.3 6.3z' /></svg>
   )
 }
 
 const ToLeftIcon = ({ width = '24', height = '24' }) => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox='0 0 24 24' width={width} focusable='false'><path d='M14.96 18.96 8 12l6.96-6.96.71.71L9.41 12l6.25 6.25-.7.71z' /></svg>
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M14.96 18.96 8 12l6.96-6.96.71.71L9.41 12l6.25 6.25-.7.71z' /></svg>
+  )
+}
+
+const DislikeIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox={`0 0 ${width} ${height}`} height={height} width={width} xmlns='http://www.w3.org/2000/svg'><path d='M20 3H6.693A2.01 2.01 0 0 0 4.82 4.298l-2.757 7.351A1 1 0 0 0 2 12v2c0 1.103.897 2 2 2h5.612L8.49 19.367a2.004 2.004 0 0 0 .274 1.802c.376.52.982.831 1.624.831H12c.297 0 .578-.132.769-.36l4.7-5.64H20c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm-8.469 17h-1.145l1.562-4.684A1 1 0 0 0 11 14H4v-1.819L6.693 5H16v9.638L11.531 20zM18 14V5h2l.001 9H18z' /></svg>
+  )
+}
+
+const ShareIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M15 5.63 20.66 12 15 18.37V14h-1c-3.96 0-7.14 1-9.75 3.09 1.84-4.07 5.11-6.4 9.89-7.1l.86-.13V5.63M14 3v6C6.22 10.13 3.11 15.33 2 21c2.78-3.97 6.44-6 12-6v6l8-9-8-9z' /></svg>
+  )
+}
+
+const HorizontalDots = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M7.5 12c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5.67-1.5 1.5-1.5 1.5.67 1.5 1.5zm4.5-1.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm6 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z' /></svg>
+  )
+}
+
+const ClipIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg xmlns='http://www.w3.org/2000/svg' enableBackground='new 0 0 24 24' height={height} viewBox={`0 0 ${width} ${height}`} width={width} focusable='false'><path d='M8 7c0 .55-.45 1-1 1s-1-.45-1-1 .45-1 1-1 1 .45 1 1zm-1 9c-.55 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1zm3.79-7.77L21 18.44V20h-3.27l-5.76-5.76-1.27 1.27c.19.46.3.96.3 1.49 0 2.21-1.79 4-4 4s-4-1.79-4-4 1.79-4 4-4c.42 0 .81.08 1.19.2l1.37-1.37-1.11-1.11C8 10.89 7.51 11 7 11c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4c0 .43-.09.84-.21 1.23zm-.71.71-.43-.44.19-.58c.11-.34.16-.64.16-.92 0-1.65-1.35-3-3-3S4 5.35 4 7s1.35 3 3 3c.36 0 .73-.07 1.09-.21l.61-.24.46.46 1.11 1.11.71.71-.71.71-1.37 1.37-.43.43-.58-.18C7.55 14.05 7.27 14 7 14c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3c0-.38-.07-.75-.22-1.12l-.25-.61.47-.47 1.27-1.27.71-.71.71.71L18.15 19H20v-.15l-9.92-9.91zM17.73 4H21v1.56l-5.52 5.52-2.41-2.41L17.73 4zm.42 1-3.67 3.67 1 1L20 5.15V5h-1.85z' /></svg>
+  )
+}
+
+const LikeIcon = ({ width = '24', height = '24' }) => {
+  return (
+    <svg stroke='currentColor' fill='currentColor' strokeWidth='0' viewBox={`0 0 ${width} ${height}`} height={height} width={width} xmlns='http://www.w3.org/2000/svg'><path d='M20 8h-5.612l1.123-3.367c.202-.608.1-1.282-.275-1.802S14.253 2 13.612 2H12c-.297 0-.578.132-.769.36L6.531 8H4c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h13.307a2.01 2.01 0 0 0 1.873-1.298l2.757-7.351A1 1 0 0 0 22 12v-2c0-1.103-.897-2-2-2zM4 10h2v9H4v-9zm16 1.819L17.307 19H8V9.362L12.468 4h1.146l-1.562 4.683A.998.998 0 0 0 13 10h7v1.819z' /></svg>
   )
 }
 
@@ -159,5 +189,10 @@ export {
   GamingIcon,
   VerifiedIcon,
   ToRightIcon,
-  ToLeftIcon
+  ToLeftIcon,
+  LikeIcon,
+  DislikeIcon,
+  ShareIcon,
+  HorizontalDots,
+  ClipIcon
 }

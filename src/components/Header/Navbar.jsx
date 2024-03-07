@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Search from './Search'
 import Button from '../Button'
 
-const Navbar = ({ setIsSidebarOpen, isSidebarOpen }) => {
+const Navbar = ({ setIsSidebarOpen, isSidebarOpen, setAllVideos }) => {
   return (
     <>
       <section className={styles.navbar}>
@@ -12,10 +12,10 @@ const Navbar = ({ setIsSidebarOpen, isSidebarOpen }) => {
           <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
             <MenuIcon />
           </Button>
-          <Link className={styles.menu__item} href='/'><YouTubeIcon /></Link>
+          <Link className={styles.menu__logo} href='/'><YouTubeIcon /></Link>
         </ul>
         <ul className={styles.container}>
-          <Search />
+          <Search setAllVideos={setAllVideos} />
           <Button onClick={() => console.log('Mic')} type='button'>
             <MicIcon />
           </Button>

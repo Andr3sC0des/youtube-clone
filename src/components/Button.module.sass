@@ -13,6 +13,66 @@
     cursor: pointer
     background: #272727
 
+.action
+  background: #2c302c
+  width: fit-content
+  display: flex
+  justify-content: center
+  align-items: center
+  color: #fff
+  height: 36px
+  padding: 0rem 1rem
+  gap: 0.5rem
+  &:hover
+    background: #434243
+  &> span
+    font-size: 14px
+    font-weight: 600
+
+.double
+  position: relative
+  display: flex
+  width: fit-content
+  justify-content: center
+  align-items: center
+  background: #2c302c
+  padding: 0
+  overflow: hidden
+  height: 36px
+  &:first-child
+    &::before
+      position: absolute
+      left: 61.5%
+      content: ""
+      width: 1px
+      height: 80%
+      background: #7c7c7c77
+      z-index: 1
+  &> button
+    font-size: 14px
+    height: 100%
+    background: #2c302c
+    color: #fff
+    border: none
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 0.5rem
+    padding: 0rem 1rem
+    &:hover
+      background: #434243
+
+.white
+  background: #fff
+  color: #000
+  height: 36px
+  width: fit-content
+  padding: 0rem 1rem
+  font-weight: bold
+  &:hover
+    background: #f4f4f4
+
 .menu
   cursor: none
   background: transparent

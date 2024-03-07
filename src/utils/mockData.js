@@ -1,111 +1,84 @@
 const MockVideos = [
   {
     id: 'fe8R45JSnbw',
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/fe8R45JSnbw/maxresdefault.webp',
     title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'luisitocomunica',
     duration: '12:10',
-    tag: 'History',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'History'
   },
   {
-    id: 2,
-    url: '/watch?v=KtoztHyo2Bw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'KhLyk9B69tg',
+    title: 'Así Roban Tu HUELLA con el SONIDO',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 's4vitar',
     duration: '12:10',
-    tag: 'History',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'History'
   },
   {
-    id: 3,
-    url: '/watch?v=6of9yHaGC78',
-    thumbnail: 'https://i.ytimg.com/vi_webp/6of9yHaGC78/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'FJOODu_CBcE',
+    title: '[Rainych】 Chiki Chiki Ban Ban (チキチキバンバン) - QUEENDOM 『Paripi Koumei OP』 (cover)',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'Rainych',
     duration: '12:10',
-    tag: 'History',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'History'
   },
   {
-    id: 4,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'Nfm7x2TLUyU',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'midudev',
     duration: '12:10',
-    tag: 'Thrillers',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'Thrillers'
   },
   {
-    id: 5,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'QJie7dTvbjQ',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'majikoofficial',
     duration: '12:10',
-    tag: 'History',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'History'
   },
   {
-    id: 6,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: '0YF8vecQWYs',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'johndoe',
     duration: '12:10',
-    tag: 'Factories',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'Factories'
   },
   {
-    id: 7,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'IqnZPhKxQ4E',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'AnimeOstsForYou',
     duration: '12:10',
-    tag: 'Premieres',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'Premieres'
   },
   {
-    id: 8,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: 'npFAmRqHpQc',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'johndoe',
     duration: '12:10',
-    tag: 'Machines',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'Machines'
   },
   {
-    id: 9,
-    url: '/watch?v=fe8R45JSnbw',
-    thumbnail: 'https://i.ytimg.com/vi_webp/KtoztHyo2Bw/maxresdefault.webp',
-    title: 'Exploring NIGERIA: “the monster of Africa” | Is it as dangerous as they say? 🇳🇬',
+    id: '9nCkUgTO5x4',
+    title: 'Los Nuevos Programadores la Tienen DIFÍCIL si hacen esto…',
     views: '2,718,490',
     publishedDate: '1 day ago',
-    channel: 'Luisito Comunica',
+    channel: 'johndoe',
     duration: '12:10',
-    tag: 'History',
-    avatar: 'https://yt3.ggpht.com/ytc/AIdro_nMt5PhvIFKldKimlPNdriSJn9_pADPDKwPkBxTGQ=s48-c-k-c0x00ffffff-no-rj'
+    tag: 'History'
   }
 ]
 

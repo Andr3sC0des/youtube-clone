@@ -1,12 +1,13 @@
+import Link from 'next/link'
 import styles from './MenuItem.module.sass'
 
-const MenuItem = ({ selected = 'home', title = 'Home', icon = 'icon' }) => {
+const MenuItem = ({ slug = '', title = 'Home', icon = 'icon' }) => {
   return (
     <>
-      <ul className={styles.item}>
+      <Link href={`/${slug}`} className={styles.item}>
         <i className={styles.icon}>{icon}</i>
         <span className={styles.title}>{title}</span>
-      </ul>
+      </Link>
     </>
   )
 }
