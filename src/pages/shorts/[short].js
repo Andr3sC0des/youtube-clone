@@ -1,23 +1,17 @@
 import Navbar from '@/components/Header/Navbar'
 import UseGetShorts from '@/hooks/useGetShorts'
 import styles from '@/styles/pages/short.module.sass'
-import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { useEffect, useRef, useState } from 'react'
 
 const Index = ({ id }) => {
   const { allShorts } = UseGetShorts({})
   const [currentVideo, setCurrentVideo] = useState(id)
+  const router = useRouter()
+  const shortsRef = useRef(null)
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
-  }, [])
-
-  useEffect(() => {
-    if (id) {
-      const element = document.getElementById(id)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
   }, [])
 
   useEffect(() => {
@@ -29,7 +23,7 @@ const Index = ({ id }) => {
       setCurrentVideo(allShorts[currentIndex].shorts.id)
 
       if (currentIndex < allShorts.length) {
-        window.history.replaceState(null, null, `/shorts/${allShorts[currentIndex].shorts.id}`)
+        router.replace(`/shorts/${allShorts[currentIndex].shorts.id}`)
       }
     }
 
@@ -41,13 +35,18 @@ const Index = ({ id }) => {
     }
   })
 
+  useEffect(() => {
+    const video = document.getElementById(id)
+    video?.scrollIntoView({ behavior: 'smooth' })
+  }, [allShorts])
+
   return (
     <>
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar />
         </header>
-        <main id='allShorts' className={styles.content}>
+        <main ref={shortsRef} id='allShorts' className={styles.content}>
           {
            allShorts.map(short => {
              return (
