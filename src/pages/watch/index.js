@@ -31,11 +31,11 @@ const Index = ({ video }) => {
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar setAllVideos={setAllVideos}>
-            <Button buttonRef={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
+            <Button reference={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
-          <PopupMenu buttonRef={buttonRef}>
+          <PopupMenu reference={buttonRef}>
             <Sidebar />
           </PopupMenu>
         </header>

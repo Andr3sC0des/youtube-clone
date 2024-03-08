@@ -1,15 +1,18 @@
 import { useContext, useEffect, useRef } from 'react'
 import { popupContext } from '@/context/popupContext'
 
-const PopupMenu = ({ children, buttonRef }) => {
+const PopupMenu = ({ children, reference }) => {
   const [popup, setPopup] = useContext(popupContext)
   const menuRef = useRef(null)
 
   useEffect(() => {
     const getClicks = (e) => {
       if (!menuRef.current) return
-      if (!buttonRef.current) return
-      if (!buttonRef.current.contains(e.target) && !menuRef.current.firstChild.contains(e.target)) {
+      if (!reference.current) return
+      const inTheMenu = menuRef.current.contains(e.target)
+      const inTheButton = reference.current.contains(e.target)
+
+      if (!inTheButton && !inTheMenu) {
         setPopup(false)
       }
     }
@@ -22,7 +25,7 @@ const PopupMenu = ({ children, buttonRef }) => {
 
   return (
     <>
-      {popup && <section ref={menuRef}>{children}</section>}
+      {popup && <section style={{ width: 'fit-content' }} ref={menuRef}>{children}</section>}
     </>
   )
 }
