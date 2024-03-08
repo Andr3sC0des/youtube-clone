@@ -1,12 +1,14 @@
+@import "../var"
+  
 .container
   display: grid
-  grid-template-rows: 56px 1fr
+  grid-template-rows: $navbar-height 1fr
 
 
 .notfound
   display: grid
   place-content: center
-  height: calc(100vh - 56px)
+  height: calc(100vh - $navbar-height)
   text-align: center
   &> img
     max-width: 300px
