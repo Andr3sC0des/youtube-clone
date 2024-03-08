@@ -1,8 +1,9 @@
-import { MicIcon, SettingsIcon, UserIcon, YouTubeIcon } from '@/Icons/Icons'
+import { MicIcon, UserIcon, YouTubeIcon } from '@/Icons/Icons'
 import styles from './Navbar.module.sass'
 import Link from 'next/link'
 import Search from './Search'
 import Button from '../Button'
+import SettingsMenu from './SettingsMenu'
 
 const Navbar = ({ setAllVideos, children }) => {
   return (
@@ -19,9 +20,7 @@ const Navbar = ({ setAllVideos, children }) => {
           </Button>
         </ul>
         <ul className={styles.container}>
-          <Button onClick={() => console.log('Settings')} type='popup'>
-            <SettingsIcon />
-          </Button>
+          <SettingsMenu />
           <li className={styles.menu__item}>
             <Button onClick={() => console.log('Sign in')} type='sign-in'>
               <UserIcon />
