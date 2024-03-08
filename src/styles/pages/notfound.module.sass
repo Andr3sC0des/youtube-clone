@@ -35,3 +35,23 @@
     margin: 0 auto
     padding: 0rem 1rem
     margin-top: 2rem
+
+.aside
+  position: relative
+  grid-area: sidebar
+  overflow: scroll
+  width: $sidebar-full-width
+  background: $main-background
+  position: fixed
+  height: calc(100vh - $navbar-height)
+  top: $navbar-height
+  left: 0
+  &__collapsed
+    position: relative
+    grid-area: sidebar
+    width: $sidebar-width
+    background: $main-background
+    position: fixed
+    height: 100%
+    top: $navbar-height
+    left: 0

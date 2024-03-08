@@ -95,7 +95,7 @@ const Index = ({ id }) => {
                    <Button type='short'>
                      <SettingsIcon />
                    </Button>
-                   <img src='https://i.ytimg.com/vi_webp/HMluqSGag5E/maxresdefault.webp' alt='' />
+                   <img src={`https://unavatar.io/youtube/${short.name}`} alt='' />
                  </aside>
                </section>
              )

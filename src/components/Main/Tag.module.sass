@@ -1,7 +1,9 @@
+@import '../../styles/var'
+  
 .tag
   display: block
-  background: #272727
-  color: #fff
+  background: $secundary-background
+  color: $main-color
   font-size: 14px
   border-radius: 0.5rem
   padding: 0.5rem 1rem
@@ -11,11 +13,11 @@
   white-space: nowrap
   cursor: pointer
   &:hover
-    background: #3f3f3f
-    color: #fff
+    background: $gray-hover
+    color: $main-color
   &__selected
-    background: #fff
+    background: $white
     color: #000
     &:hover
-      background: #fff
-      color: #000
+      background: $white
+      color: $main-background

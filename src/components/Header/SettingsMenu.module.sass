@@ -1,30 +1,32 @@
+@import '../../styles/var'
+  
 .menu
   width: 300px
   border-radius: 1rem
-  background: #282828
+  background: $secundary-background
   position: absolute
   right: 0px
-  top: 56px
+  top: $navbar-height
   display: flex
   flex-direction: column
   overflow: hidden
   &__list
     list-style-type: none
-    padding: 0
+    padding: 0 !important
   &__item
     height: 40px
-    width: 100%
-    display: flex
+    width: 100% !important
+    display: flex 
     cursor: pointer
     align-items: center
     gap: 1rem
-    padding: 1.5rem
-    border-radius: 0
+    padding: 1.5rem !important
+    border-radius: 0 !important
     padding-left: 18px
     &> svg
-      fill: #fff
+      fill: $main-color
     &:hover
-      background: #3e3e3e
+      background: $gray-hover !important
 
 .container
   position: relative

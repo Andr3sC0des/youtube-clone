@@ -40,13 +40,13 @@ const SettingsMenu = () => {
         {isShow &&
           <section ref={menuRef} className={styles.menu}>
             <GroupItems customClass={styles.menu__list}>
-              <MenuItem customClass={styles.menu__item} icon={<DataIcon />} title='Your data in YouTube' />
+              <MenuItem type='button' customClass={styles.menu__item} icon={<DataIcon />} title='Your data in YouTube' />
               <MenuItem onClick={handleTheme} type='button' customClass={styles.menu__item} icon={<ThemeIcon />} title='Appearance: Device Theme' />
-              <MenuItem customClass={styles.menu__item} icon={<LanguageIcon />} title='Language: English' />
-              <MenuItem customClass={styles.menu__item} icon={<RestrictedModeIcon />} title='Restricted Mode: Off' />
-              <MenuItem customClass={styles.menu__item} icon={<ShortcutsIcon />} title='Keyboard Shortcuts' />
+              <MenuItem type='button' customClass={styles.menu__item} icon={<LanguageIcon />} title='Language: English' />
+              <MenuItem type='button' customClass={styles.menu__item} icon={<RestrictedModeIcon />} title='Restricted Mode: Off' />
+              <MenuItem type='button' customClass={styles.menu__item} icon={<ShortcutsIcon />} title='Keyboard Shortcuts' />
             </GroupItems>
-            <MenuItem customClass={styles.menu__item} icon={<GearIcon />} title='Settings' />
+            <MenuItem type='button' customClass={styles.menu__item} icon={<GearIcon />} title='Settings' />
           </section>}
       </div>
     </>

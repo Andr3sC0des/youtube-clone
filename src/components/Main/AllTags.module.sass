@@ -1,10 +1,12 @@
+@import "../../styles/var"
+  
 .alltags
   display: flex
   align-items: center
   justify-content: flex-start
   gap: 0.5rem
   flex-wrap: nowrap
-  background: #0f0f0f
+  background: $main-background
   padding: 1rem 0.5rem
   overflow: hidden
   width: 100%
@@ -25,7 +27,7 @@
     &::after
       content: ""
       position: absolute
-      background: #0f0f0f
+      background: $main-background
       height: 100px
       filter: blur(6px)
       top: 0

@@ -16,7 +16,7 @@ const Index = ({ video }) => {
   const [popup, setPopup] = useContext(popupContext)
   const buttonRef = useRef(null)
   const [selectedTag, setSelectedTag] = useState('All')
-  const { allVideos } = UseChannels({ selectedTag })
+  const { allVideos, setAllVideos } = UseChannels({ selectedTag })
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
@@ -30,7 +30,7 @@ const Index = ({ video }) => {
       </Head>
       <section className={styles.container}>
         <header className={styles.navbar}>
-          <Navbar>
+          <Navbar setAllVideos={setAllVideos}>
             <Button buttonRef={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
               <MenuIcon />
             </Button>

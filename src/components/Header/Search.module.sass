@@ -1,3 +1,5 @@
+@import '../../styles/var'
+
 .search
   border-radius: 2rem
   height: 40px
@@ -5,10 +7,10 @@
   display: flex
   justify-content: center
   align-items: center
-  background: #121212
+  background: $main-background
   outline: 1px solid rgb(48,48 ,48 )
   &__icon
-    fill: #fff
+    fill: $main-color
     margin-left: 1rem
     display: block
   &__input
@@ -16,7 +18,7 @@
     color: rgba(255, 255, 255, 0.88)
     padding-left: 1rem
     font-size: 1rem
-    background: #121212
+    background: $main-background
     height: 100%
     width: 100%
     border: none
@@ -25,10 +27,10 @@
     &:focus
       outline: 1px solid rgb(62, 166, 255)
   &__button
-    color: #fff
-    background: #222
+    color: $main-color
+    background: $secundary-background
     border: none
-    fill: #fff
+    fill: $main-color
     height: 100%
     width: 65px
     cursor: pointer
