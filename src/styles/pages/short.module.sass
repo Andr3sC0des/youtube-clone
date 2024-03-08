@@ -1,3 +1,7 @@
+$sidebar-width: 72px
+$sidebar-full-width: 240px
+$navbar-height: 56px
+
 .container
   display: grid
   grid-template-rows: 56px 1fr
@@ -53,3 +57,23 @@
       display: none
 
 
+
+.aside
+  position: relative
+  grid-area: sidebar
+  overflow: scroll
+  width: $sidebar-full-width
+  background: #0f0f0f
+  position: fixed
+  height: calc(100vh - $navbar-height)
+  top: $navbar-height
+  left: 0
+  &__collapsed
+    position: relative
+    grid-area: sidebar
+    width: $sidebar-width
+    background: #0f0f0f
+    position: fixed
+    height: 100%
+    top: $navbar-height
+    left: 0

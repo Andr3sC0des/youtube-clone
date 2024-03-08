@@ -14,7 +14,7 @@ $navbar-height: 56px
   position: fixed
   background: #0f0f0f
   height: $navbar-height
-  z-index: 1
+  z-index: 5
 
 .content
   padding: 32px 40px
@@ -28,8 +28,11 @@ $navbar-height: 56px
 
 .video
   grid-area: video
+  z-index: 4
   max-height: 480px
 
 .videos
+  position: relative
   grid-area: videos
   width: fit-content
+  max-width: 400px
