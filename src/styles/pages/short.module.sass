@@ -10,7 +10,7 @@
   grid-area: navbar
   width: 100%
   position: fixed
-  background: $main-background
+  background: var(--main-background)
   height: 56px
   z-index: 1
 
@@ -60,18 +60,18 @@
   position: relative
   grid-area: sidebar
   overflow: scroll
-  width: $sidebar-full-width
-  background: $main-background
+  width: var(--sidebar-full-width)
+  background: var(--main-background)
   position: fixed
-  height: calc(100vh - $navbar-height)
-  top: $navbar-height
+  height: calc(100vh - var(--navbar-height))
+  top: var(--navbar-height)
   left: 0
   &__collapsed
     position: relative
     grid-area: sidebar
-    width: $sidebar-width
-    background: $main-background
+    width: var(--sidebar-width)
+    background: var(--main-background)
     position: fixed
     height: 100%
-    top: $navbar-height
+    top: var(--navbar-height)
     left: 0

@@ -1,17 +1,17 @@
-@import "../../styles/var"
+@import "../../styles/var.css"
 
 .container
   position: relative
   display: grid
   grid-template-areas: "navbar navbar" "content content"
-  grid-template-rows: $navbar-height 1fr
+  grid-template-rows: var(--navbar-height) 1fr
 
 .navbar
   grid-area: navbar
   width: 100%
   position: fixed
-  background: $main-background
-  height: $navbar-height
+  background: var(--main-background)
+  height: var(--navbar-height)
   z-index: 5
 
 .content

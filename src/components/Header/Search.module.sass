@@ -1,4 +1,4 @@
-@import '../../styles/var'
+@import '../../styles/var.css'
 
 .search
   border-radius: 2rem
@@ -7,34 +7,33 @@
   display: flex
   justify-content: center
   align-items: center
-  background: $main-background
-  outline: 1px solid rgb(48,48 ,48 )
+  background: var(--main-background)
+  outline: 1px solid var(--gray-border)
   &__icon
-    fill: $main-color
+    fill: var(--main-color)
     margin-left: 1rem
     display: block
   &__input
     position: relative
-    color: rgba(255, 255, 255, 0.88)
+    color: var(--main-color)
     padding-left: 1rem
     font-size: 1rem
-    background: $main-background
+    background: var(--main-background)
     height: 100%
     width: 100%
     border: none
     border-top-left-radius: 2rem
     border-bottom-left-radius: 2rem
     &:focus
-      outline: 1px solid rgb(62, 166, 255)
+      outline: 1px solid var(--blue-color)
   &__button
-    color: $main-color
-    background: $secundary-background
+    color: var(--main-color)
+    background: var(--secundary-background)
     border: none
-    fill: $main-color
+    fill: var(--main-color)
     height: 100%
     width: 65px
     cursor: pointer
     border-top-right-radius: 2rem
     border-bottom-right-radius: 2rem
-    outline: 1px solid rgb(48,48 ,48 )
     

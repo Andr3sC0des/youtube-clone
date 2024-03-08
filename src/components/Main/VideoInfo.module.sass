@@ -1,4 +1,4 @@
-@import '../../styles/var'
+@import '../../styles/var.css'
 .info
   display: flex
   justify-content: space-between
@@ -9,7 +9,7 @@
   &__title
     font-size: 20px
     font-weight: 700
-    color: $main-color
+    color: var(--main-color)
 
 .channel
   display: flex
@@ -25,11 +25,11 @@
     object-fit: cover
   &__info
     &> span
-      color: rgb(170, 170, 170)
+      color: var(--gray-color)
       font-size: 12px
     &> h4
       font-size: 14px
-      color: $main-color
+      color: var(--main-color)
 
 .actions
   display: flex

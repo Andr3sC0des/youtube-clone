@@ -1,4 +1,4 @@
-@import '../../styles/var'
+@import '../../styles/var.css'
   
 .card
   overflow: hidden
@@ -6,7 +6,7 @@
   text-decoration: none
   display: block
   &__title
-    color: $main-color
+    color: var(--main-color)
     font-size: 16px
     width: 100%
     padding: 0.5rem
@@ -17,8 +17,8 @@
     border-radius: 1rem
     overflow: hidden
   &__duration
-    color: $main-color
-    background: $main-background
+    color: var(--main-color)
+    background: var(--main-background)
     position: absolute
     right: 10px
     bottom: 5px

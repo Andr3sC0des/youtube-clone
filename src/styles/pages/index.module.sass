@@ -1,23 +1,23 @@
-@import "../var"
+@import "../var.css"
 
 .container
   position: relative
   display: grid
   grid-template-areas: "navbar navbar navbar" "sidebar main main"
-  grid-template-columns: $sidebar-full-width 1fr 1fr
-  grid-template-rows: $navbar-height 1fr
+  grid-template-columns: var(--sidebar-full-width) 1fr 1fr
+  grid-template-rows: var(--navbar-height) 1fr
   &__collapsed
     display: grid
     grid-template-areas: "navbar navbar navbar" "sidebar main main"
-    grid-template-columns: $sidebar-width 1fr 1fr
-    grid-template-rows: $navbar-height 1fr
+    grid-template-columns: var(--sidebar-width) 1fr 1fr
+    grid-template-rows: var(--navbar-height) 1fr
 
 .navbar
   grid-area: navbar
   width: 100%
   position: fixed
-  background: $main-background
-  height: $navbar-height
+  background: var(--main-background)
+  height: var(--navbar-height)
   z-index: 3
 
 .content
@@ -38,30 +38,29 @@
   position: fixed
   z-index: 2
   overflow: hidden
-  width: calc( 100vw - $sidebar-full-width)
+  width: calc( 100vw - var(--sidebar-full-width))
   &__collapsed
     grid-area: tags 
     position: fixed
     z-index: 2
     overflow: hidden
-    width: calc(100vw - $sidebar-width)
+    width: calc(100vw - var(--sidebar-width))
 
 .sidebar
   position: relative
   grid-area: sidebar
-  overflow: scroll
-  width: $sidebar-full-width
-  background: $main-background
+  width: var(--sidebar-full-width)
+  background: var(--main-background)
   position: fixed
-  height: calc(100vh - $navbar-height)
-  top: $navbar-height
+  height: calc(100vh - var(--navbar-height))
+  top: var(--navbar-height)
   left: 0
   &__collapsed
     position: relative
     grid-area: sidebar
-    width: $sidebar-width
-    background: $main-background
+    width: var(--sidebar-width)
+    background: var(--main-background)
     position: fixed
     height: 100%
-    top: $navbar-height
+    top: var(--navbar-height)
     left: 0

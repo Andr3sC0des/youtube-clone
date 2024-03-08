@@ -33,6 +33,17 @@ const SettingsMenu = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark')
+      window.localStorage.setItem('theme', 'dark')
+    } else
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light')
+        window.localStorage.setItem('theme', 'light')
+      }
+  }, [theme])
+
   return (
     <>
       <div className={styles.container}>

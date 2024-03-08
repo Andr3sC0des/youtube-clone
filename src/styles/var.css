@@ -1,0 +1,31 @@
+.html[data-theme='dark'] {
+  --sidebar-width: 72px;
+  --sidebar-full-width: 240px;
+  --navbar-height: 56px;
+  --main-background: #0f0f0f;
+  --secundary-background: #272727;
+  --main-color: rgba(255, 255, 255, 0.88);
+  --gray-hover: #434243;
+  --gray-border: rgba(255, 255, 255, 0.2);
+  --blue-hover: #263850;
+  --blue-color: rgb(62, 166, 255);
+  --white: #fff;
+  --gray-color: #aaaaaa;
+  --black: #000
+}
+
+.html[data-theme='light'] {
+  --sidebar-width: 72px;
+  --sidebar-full-width: 240px;
+  --navbar-height: 56px;
+  --main-background: #ffffff;
+  --secundary-background: #f2f2f2;
+  --main-color: rgba(0, 0, 0, 0.88);
+  --gray-hover: #e0e0e0; 
+  --gray-border: #e7e7e7;
+  --blue-hover: #def1ff; 
+  --blue-color: #0760d4; 
+  --white: #000; 
+  --gray-color: #6f6f6f; 
+  --black: #fff
+}

@@ -1,12 +1,12 @@
-@import '../../styles/var'
+@import '../../styles/var.css'
   
 .menu
   width: 300px
   border-radius: 1rem
-  background: $secundary-background
+  background: var(--secundary-background)
   position: absolute
   right: 0px
-  top: $navbar-height
+  top: var(--navbar-height)
   display: flex
   flex-direction: column
   overflow: hidden
@@ -24,9 +24,9 @@
     border-radius: 0 !important
     padding-left: 18px
     &> svg
-      fill: $main-color
+      fill: var(--main-color)
     &:hover
-      background: $gray-hover !important
+      background: var(--gray-hover) !important
 
 .container
   position: relative
