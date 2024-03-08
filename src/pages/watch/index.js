@@ -1,5 +1,5 @@
 import Navbar from '@/components/Header/Navbar'
-import { useContext, useEffect, useRef } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import styles from '@/styles/pages/watch.module.sass'
 import AllMiniVideoCards from '@/components/Main/AllMiniVideoCards'
 import VideoInfo from '@/components/Main/VideoInfo'
@@ -10,11 +10,13 @@ import Button from '@/components/Button'
 import { popupContext } from '@/context/popupContext'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import PopupMenu from '@/components/PopupMenu'
+import AllTags from '@/components/Main/AllTags'
 
 const Index = ({ video }) => {
-  const { allVideos } = UseChannels({})
   const [popup, setPopup] = useContext(popupContext)
   const buttonRef = useRef(null)
+  const [selectedTag, setSelectedTag] = useState('All')
+  const { allVideos } = UseChannels({ selectedTag })
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
@@ -49,6 +51,7 @@ const Index = ({ video }) => {
             />
           </article>
           <aside className={styles.videos}>
+            <AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} />
             <AllMiniVideoCards videos={allVideos} />
           </aside>
         </section>

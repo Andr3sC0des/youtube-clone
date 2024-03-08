@@ -1,19 +1,18 @@
 import { CommentIcon, MenuIcon, SettingsIcon, ShareIcon, ShortLikeIcon, ShortUnlikeIcon } from '@/Icons/Icons'
 import Button from '@/components/Button'
 import Navbar from '@/components/Header/Navbar'
-import PopupMenu from '@/components/PopupMenu'
 import Sidebar from '@/components/Sidebar/Sidebar'
-import { popupContext } from '@/context/popupContext'
 import UseGetShorts from '@/hooks/useGetShorts'
 import styles from '@/styles/pages/short.module.sass'
 import { useRouter } from 'next/router'
-import { useContext, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const Index = ({ id }) => {
   const { allShorts } = UseGetShorts({})
   const [currentVideo, setCurrentVideo] = useState(id)
   const router = useRouter()
   const shortsRef = useRef(null)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
@@ -45,14 +44,13 @@ const Index = ({ id }) => {
     const video = document.getElementById(id)
     video?.scrollIntoView({ behavior: 'smooth' })
   }, [allShorts])
-  const [popup, setPopup] = useContext(popupContext)
 
   return (
     <>
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar>
-            <Button onClick={() => setPopup(!popup)} type='menu'>
+            <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
@@ -104,6 +102,9 @@ const Index = ({ id }) => {
            })
           }
         </main>
+        <aside className={isSidebarOpen ? styles.aside : styles.aside__collapsed}>
+          {isSidebarOpen ? <Sidebar /> : <Sidebar type='collapsed' />}
+        </aside>
       </section>
     </>
   )
