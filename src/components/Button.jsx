@@ -1,7 +1,7 @@
 import styles from './Button.module.sass'
 
 // types: button, menu, popup, sign-in
-const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, buttonRef }) => {
+const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, reference }) => {
   const buttonStyles = () => {
     if (type === 'menu') return [styles.button, styles.menu].join(' ')
     if (type === 'popup') return [styles.button, styles.popup].join(' ')
@@ -20,10 +20,10 @@ const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {
       </div>
     )
   }
-  if (type === 'menu') {
+  if (type === 'menu' || type === 'popup') {
     return (
       <button
-        ref={buttonRef}
+        ref={reference}
         onClick={onClick}
         className={buttonStyles()}
       >{children}
