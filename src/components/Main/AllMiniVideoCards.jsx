@@ -2,7 +2,6 @@ import MiniVideoCard from './MiniVideoCard'
 import styles from './AllMiniVideoCards.module.sass'
 
 const AllMiniVideoCards = ({ videos }) => {
-  console.log(videos)
   return (
     <>
       <section className={styles.container}>
