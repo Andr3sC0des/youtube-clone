@@ -83,6 +83,7 @@ const Index = ({ id, title }) => {
         <main ref={shortsRef} id='allShorts' className={styles.content}>
           {
            allShorts.map(short => {
+             console.log(short)
              return (
                <section className={styles.videocontainer} key={short.shorts.id}>
                  <article id={short.shorts.id} className={`liteYoutube ${styles.video}`}>
@@ -96,7 +97,7 @@ const Index = ({ id, title }) => {
                        <Button label='Like' type='shorticon'>
                          <ShortLikeIcon />
                        </Button>
-                       <span>714K</span>
+                       <span>{short.shorts.likes}</span>
                      </div>
                      <div className={styles.mobilesidebar__button}>
                        <Button label='Dislike' type='shorticon'>
@@ -108,7 +109,7 @@ const Index = ({ id, title }) => {
                        <Button label='Comment' type='shorticon'>
                          <CommentIcon />
                        </Button>
-                       <span>1,331</span>
+                       <span>{short.shorts.comments}</span>
                      </div>
                      <div className={styles.mobilesidebar__button}>
                        <Button label='Share' type='shorticon'>
@@ -129,7 +130,7 @@ const Index = ({ id, title }) => {
                      <Button label='Like' type='short'>
                        <ShortLikeIcon />
                      </Button>
-                     <span>714K</span>
+                     <span>{short.shorts.likes}</span>
                    </div>
                    <div className={styles.button}>
                      <Button label='Dislike' type='short'>
@@ -141,7 +142,7 @@ const Index = ({ id, title }) => {
                      <Button label='Comment' type='short'>
                        <CommentIcon />
                      </Button>
-                     <span>1,331</span>
+                     <span>{short.shorts.comments}</span>
                    </div>
                    <div className={styles.button}>
                      <Button label='Share' type='short'>
