@@ -5,10 +5,11 @@ import MobileNavbar from '@/components/MobileNavbar'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import UseGetShorts from '@/hooks/useGetShorts'
 import styles from '@/styles/pages/short.module.sass'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useEffect, useRef, useState } from 'react'
 
-const Index = ({ id }) => {
+const Index = ({ id, title }) => {
   const { allShorts } = UseGetShorts({})
   const [currentVideo, setCurrentVideo] = useState(id)
   const router = useRouter()
@@ -67,6 +68,10 @@ const Index = ({ id }) => {
 
   return (
     <>
+      <Head>
+        <title>{title}</title>
+        <meta name='description' content='YouTube Shorts, short videos for your entertainment.' />
+      </Head>
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar>
@@ -165,10 +170,29 @@ export default Index
 
 export async function getServerSideProps (ctx) {
   const { query } = ctx
+  console.log(query)
+
+  const response = await fetch('https://youtube-clone-dun-sigma.vercel.app/api/channels')
+  const data = await response.json()
+  const videoArray = data.channels.flatMap(channel => {
+    if (channel.shorts.find(short => short.id === query.short)) {
+      return {
+        ...channel.shorts.find(short => short.id === query.short),
+        name: channel.name,
+        subscribers: channel.subscribers
+      }
+    }
+
+    return null
+  })
+
+  const short = videoArray.filter(video => video !== null)[0]
+  console.log(short)
 
   return {
     props: {
-      id: query.short
+      id: short.id,
+      title: short.title
     }
   }
 }
