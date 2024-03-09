@@ -36,6 +36,7 @@ const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {
   return (
     <>
       <button
+        aria-label={label}
         style={customStyle}
         onClick={onClick}
         className={buttonStyles()}

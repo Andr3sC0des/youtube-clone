@@ -14,7 +14,7 @@ const Navbar = ({ setAllVideos, children }) => {
       <section className={styles.navbar}>
         <ul className={styles.container}>
           {children}
-          <Link className={styles.menu__logo} href='/'><YouTubeIcon /></Link>
+          <Link aria-label='YouTube Logo' className={styles.menu__logo} href='/'><YouTubeIcon /></Link>
         </ul>
         <ul className={styles.container__input}>
           <Search customStyle={styles.isDesktop__search} setAllVideos={setAllVideos} />

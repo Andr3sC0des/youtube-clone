@@ -54,7 +54,7 @@ const AllTags = ({ setSelectedTag, selectedTag }) => {
     <>
       <section className={styles.container}>
         <div id='left' className={`${styles.alltags__arrow} ${styles.alltags__arrow__left}`}>
-          <Button label='Show more tags' onClick={() => handleToLeft()} type='button'>
+          <Button label='Move to the left to see more tags' onClick={() => handleToLeft()} type='button'>
             <ToLeftIcon />
           </Button>
         </div>
@@ -68,7 +68,7 @@ const AllTags = ({ setSelectedTag, selectedTag }) => {
           }
         </article>
         <div id='right' className={`${styles.alltags__arrow} ${styles.alltags__arrow__right}`}>
-          <Button label='Show more tags' onClick={() => handleToRight()} type='button'>
+          <Button label='Move to the right to see more tags' onClick={() => handleToRight()} type='button'>
             <ToRightIcon />
           </Button>
         </div>
