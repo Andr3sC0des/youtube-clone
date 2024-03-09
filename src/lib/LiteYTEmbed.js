@@ -17,8 +17,8 @@ export class LiteYTEmbed extends window.HTMLElement {
     const isWebpSupported = await LiteYTEmbed.checkWebPSupport()
 
     this.posterUrl = isWebpSupported
-      ? `https://i.ytimg.com/vi_webp/${this.videoId}/maxresdefault.webp`
-      : `https://i.ytimg.com/vi/${this.videoId}/maxresdefault.jpg`
+      ? `https://i.ytimg.com/vi_webp/${this.videoId}/hqdefault.webp`
+      : `https://i.ytimg.com/vi/${this.videoId}/hqdefault.jpg`
 
     LiteYTEmbed.addPrefetch('preload', this.posterUrl, 'image')
     this.style.backgroundImage = `url("${this.posterUrl}")`
