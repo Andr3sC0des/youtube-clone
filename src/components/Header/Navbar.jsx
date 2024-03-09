@@ -31,12 +31,12 @@ const Navbar = ({ setAllVideos, children }) => {
             <MicIcon />
           </Button>
           <SettingsMenu />
-          <li className={styles.menu__item}>
-            <Button label='Sign in' onClick={() => console.log('Sign in')} type='sign-in'>
+          <div className={styles.menu__item}>
+            <Button label='Sign in' onCdivck={() => console.log('Sign in')} type='sign-in'>
               <UserIcon />
               <span>Sign in</span>
             </Button>
-          </li>
+          </div>
         </div>
       </section>
     </>
