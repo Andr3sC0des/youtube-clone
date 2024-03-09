@@ -51,7 +51,7 @@ Dark and light mode gif
 
 ## Preview
 
-If you want to see working demo of the application <a href=" https://youtube-clone-dun-sigma.vercel.app/" target="_blank">YouTube Clone</a>
+<a href=" https://youtube-clone-dun-sigma.vercel.app/" target="_blank">YouTube Clone</a>
 
 ## Getting Started
 
