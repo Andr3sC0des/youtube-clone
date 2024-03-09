@@ -12,17 +12,17 @@ const Navbar = ({ setAllVideos, children }) => {
   return (
     <>
       <section className={styles.navbar}>
-        <ul className={styles.container}>
+        <div className={styles.container}>
           {children}
           <Link aria-label='YouTube Logo' className={styles.menu__logo} href='/'><YouTubeIcon /></Link>
-        </ul>
-        <ul className={styles.container__input}>
+        </div>
+        <div className={styles.container__input}>
           <Search customStyle={styles.isDesktop__search} setAllVideos={setAllVideos} />
           <Button label='Talk to the microphone to search' customClass={styles.isDesktop} onClick={() => console.log('Mic')} type='button'>
             <MicIcon />
           </Button>
-        </ul>
-        <ul className={styles.container}>
+        </div>
+        <div className={styles.container}>
           <Button label='Search videos' customClass={styles.isMobile__search} onClick={() => setMobileSearch(true)} type='menu'>
             <SearchIcon />
           </Button>
@@ -37,7 +37,7 @@ const Navbar = ({ setAllVideos, children }) => {
               <span>Sign in</span>
             </Button>
           </li>
-        </ul>
+        </div>
       </section>
     </>
   )
