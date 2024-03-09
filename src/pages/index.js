@@ -54,9 +54,9 @@ const Index = () => {
           </Navbar>
         </header>
         <main className={styles.content}>
-          <section className={isSidebarOpen ? styles.tags : styles.tags__collapsed}>
-            <AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} />
-          </section>
+          {isSidebarOpen
+            ? <section className={styles.tags}><AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} /></section>
+            : <section className={styles.tags__collapsed}><AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} /></section>}
           <section className={styles.videos}>
             {
             allVideos.map(video => {
