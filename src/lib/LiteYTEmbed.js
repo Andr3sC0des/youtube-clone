@@ -52,7 +52,7 @@ export class LiteYTEmbed extends window.HTMLElement {
       this.addEventListener('mouseenter', () => {
         const debouncedPlayVideo = debounce(() => {
           this.playVideo({ iframeEl })
-        }, 1200)
+        }, 2000)
         debouncedPlayVideo()
         this.addEventListener('mouseleave', debouncedPlayVideo.cancel)
       })
