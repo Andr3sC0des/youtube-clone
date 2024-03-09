@@ -26,9 +26,18 @@ YouTube Clone is challenge project which tries to reproduce the behavior and app
 
 ## SEO Analytics
 
+### Mobile Analytics 
+
+<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/zquubgqhzc?form_factor=mobile" target="_blank"><img src="screenshots/mobile-analytics.png"></a>
+
+### Desktop Analytics
+
+<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/zquubgqhzc?form_factor=desktop" target="_blank"><img src="screenshots/desktop-analytics.png"></a>
+
+
 ## Preview
 
-If you want to see working demo of the application [click here](https://youtube-clone-dun-sigma.vercel.app/)
+If you want to see working demo of the application https://youtube-clone-dun-sigma.vercel.app/
 
 ## Getting Started
 
@@ -51,16 +60,12 @@ $ yarn dev
 ## Built With
 
 - JavaScript
-- [Next.js](https://nextjs.org/)
-- [Sass](https://sass-lang.com/)
+- Next.js
+- Sass
 - CSS Modules
 
 ## Screenshots
 
-### Upload Video Modal
+### Youtube Main Page
 
-![Screenshot](screenshots/12%20-%20Upload%20Modal.jpg)
-
-### Upload Video Detail Modal
-
-![Screenshot](screenshots/13%20-%20Video%20Details.jpg)
+![YouTube Main Page](screenshots/main-page.png)
