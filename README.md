@@ -1,6 +1,6 @@
 <p align="center">
     <a href="#" target="_blank">
-        <img src="https://avatars.githubusercontent.com/u/115658159" height="100px">
+        <img src="https://avatars.githubusercontent.com/u/115658159" height="150px">
     </a>
     <h1 align="center">Andr3sC0des - YouTube Clone</h1>
     <br>
