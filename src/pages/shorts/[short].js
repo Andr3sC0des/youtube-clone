@@ -92,33 +92,35 @@ const Index = ({ id, title }) => {
                      : null
                   }
                    <aside className={styles.mobilesidebar}>
-                     <div className={styles.button}>
+                     <div className={styles.mobilesidebar__button}>
                        <Button label='Like' type='shorticon'>
                          <ShortLikeIcon />
                        </Button>
                        <span>714K</span>
                      </div>
-                     <div className={styles.button}>
+                     <div className={styles.mobilesidebar__button}>
                        <Button label='Dislike' type='shorticon'>
                          <ShortUnlikeIcon />
                        </Button>
                        <span>Dislike</span>
                      </div>
-                     <div className={styles.button}>
+                     <div className={styles.mobilesidebar__button}>
                        <Button label='Comment' type='shorticon'>
                          <CommentIcon />
                        </Button>
                        <span>1,331</span>
                      </div>
-                     <div className={styles.button}>
+                     <div className={styles.mobilesidebar__button}>
                        <Button label='Share' type='shorticon'>
                          <ShareIcon />
                        </Button>
                        <span>Share</span>
                      </div>
-                     <Button label='Settings' type='shorticon'>
-                       <SettingsIcon />
-                     </Button>
+                     <div className={styles.mobilesidebar__button}>
+                       <Button label='Settings' type='shorticon'>
+                         <SettingsIcon />
+                       </Button>
+                     </div>
                      <img src={`https://unavatar.io/youtube/${short.name}`} alt='' />
                    </aside>
                  </article>
