@@ -39,11 +39,13 @@
   z-index: 2
   overflow: hidden
   width: calc( 100vw - var(--sidebar-full-width))
+  top: var(--navbar-height)
   &__collapsed
     grid-area: tags 
     position: fixed
     z-index: 2
     overflow: hidden
+    top: var(--navbar-height)
     width: calc(100vw - var(--sidebar-width))
 
 .sidebar
