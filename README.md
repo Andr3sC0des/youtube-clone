@@ -8,7 +8,7 @@
 
 ## About The Project
 
-YouTube Clone is challenge project which tries to reproduce the behavior and apperance of YouTube.
+This YouTube clone is a challenging project aimed at replicating some of the features of the YouTube website.
 
 ## Features & Pages
 
@@ -34,6 +34,11 @@ YouTube Clone is challenge project which tries to reproduce the behavior and app
 
 <a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/zquubgqhzc?form_factor=desktop" target="_blank"><img src="screenshots/desktop-analytics.png"></a>
 
+## Screenshots
+
+### Youtube Main Page
+
+![YouTube Main Page](screenshots/main-page.png)
 
 ## Preview
 
@@ -63,9 +68,3 @@ $ yarn dev
 - Next.js
 - Sass
 - CSS Modules
-
-## Screenshots
-
-### Youtube Main Page
-
-![YouTube Main Page](screenshots/main-page.png)
