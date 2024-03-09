@@ -23,6 +23,11 @@ export class LiteYTEmbed extends window.HTMLElement {
     LiteYTEmbed.addPrefetch('preload', this.posterUrl, 'image')
     this.style.backgroundImage = `url("${this.posterUrl}")`
 
+    if (this.isShort) {
+      this.style.height = 'calc(100dvh - 56px)'
+      this.style.width = '100%'
+    }
+
     if (!playBtnEl) {
       playBtnEl = document.createElement('button')
       playBtnEl.type = 'button'
@@ -70,8 +75,8 @@ export class LiteYTEmbed extends window.HTMLElement {
     params.append('playlist', this.videoId)
 
     const iframeEl = document.createElement('iframe')
-    iframeEl.width = 315
-    iframeEl.height = 560
+    iframeEl.width = '100%'
+    iframeEl.height = 'calc(100dvh - 56px)'
     iframeEl.title = this.playLabel
     iframeEl.allowFullscreen = false
     iframeEl.allow = 'accelerometer; autoplay; encrypted-media;'
