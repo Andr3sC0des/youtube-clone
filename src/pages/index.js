@@ -2,13 +2,13 @@ import Head from 'next/head'
 import styles from '@/styles/pages/index.module.sass'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import Navbar from '@/components/Header/Navbar'
-import { HistoryIcon, HomeIcon, MenuIcon, ShortsIcon, SubsIcon, YouIcon } from '@/Icons/Icons'
+import { MenuIcon } from '@/Icons/Icons'
 import { useEffect, useState } from 'react'
 import VideoCard from '@/components/Main/VideoCard'
 import Button from '@/components/Button'
 import UseChannels from '@/hooks/useChannels'
 import AllTags from '@/components/Main/AllTags'
-import MenuMobileItem from '@/components/Sidebar/MenuMobileItem'
+import MobileNavbar from '@/components/MobileNavbar'
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -48,7 +48,7 @@ const Index = () => {
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
           <Navbar setAllVideos={setAllVideos}>
-            <Button customClass={styles.isDesktop} onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
+            <Button label='Menu' customClass={styles.isDesktop} onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
@@ -79,13 +79,7 @@ const Index = () => {
         <aside className={isSidebarOpen ? styles.sidebar : styles.sidebar__collapsed}>
           <Sidebar type={isSidebarOpen ? 'normal' : 'collapsed'} />
         </aside>
-        <footer className={styles.footer}>
-          <MenuMobileItem type='footer' title='Home' icon={<HomeIcon />} slug='/' />
-          <MenuMobileItem type='footer' title='Shorts' icon={<ShortsIcon />} slug='shorts' />
-          <MenuMobileItem type='footer' title='Subscriptions' icon={<SubsIcon />} slug='feed/subscriptions' />
-          <MenuMobileItem type='footer' title='You' icon={<YouIcon />} slug='feed/you' />
-          <MenuMobileItem type='footer' title='History' icon={<HistoryIcon />} slug='feed/history' />
-        </footer>
+        <MobileNavbar />
       </section>
     </>
   )

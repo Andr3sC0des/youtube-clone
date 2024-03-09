@@ -41,7 +41,7 @@ const Search = ({ setAllVideos, customStyle, type, setMobileSearch }) => {
   if (type === 'mobile') {
     return (
       <form onSubmit={handleSearch} className={styles.mobile}>
-        <button className={styles.mobile__close} onClick={() => setMobileSearch(false)}><LeftArrowIcon /></button>
+        <button aria-label='Close search bar' className={styles.mobile__close} onClick={() => setMobileSearch(false)}><LeftArrowIcon /></button>
 
         <div>
           <input
@@ -51,10 +51,10 @@ const Search = ({ setAllVideos, customStyle, type, setMobileSearch }) => {
             placeholder='Search'
             type='text'
           />
-          <button className={styles.mobile__button}><SearchIcon /></button>
+          <button aria-label='Search videos' className={styles.mobile__button}><SearchIcon /></button>
         </div>
 
-        <Button customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
+        <Button label='Talk to the microphone to search' customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
           <MicIcon />
         </Button>
       </form>
@@ -70,7 +70,7 @@ const Search = ({ setAllVideos, customStyle, type, setMobileSearch }) => {
           placeholder='Search' className={styles.search__input}
           type='text'
         />
-        <button className={styles.search__button}><SearchIcon /></button>
+        <button aria-label='Search videos' className={styles.search__button}><SearchIcon /></button>
       </form>
     </>
   )

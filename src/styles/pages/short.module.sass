@@ -50,6 +50,8 @@
 .content
   grid-area: content
   height:  calc(100vh - 56px)
+  height:  calc(100svh - 56px)
+  height:  calc(100dvh - 56px)
   width: 100%
   overflow-y: scroll
   scroll-snap-type: y mandatory
@@ -69,6 +71,7 @@
   align-items: center
   gap: 1rem
   height: calc( 100vh - 53px)
+  height: calc( 100svh - 53px)
   height: calc( 100dvh - 53px)
   display: none
   &> img
@@ -84,6 +87,8 @@
   background: var(--main-background)
   position: fixed
   height: calc(100vh - var(--navbar-height))
+  height: calc(100svh - var(--navbar-height))
+  height: calc(100dvh - var(--navbar-height))
   top: var(--navbar-height)
   left: 0
   &__collapsed
@@ -96,18 +101,6 @@
     top: var(--navbar-height)
     left: 0
 
-
-.footer
-  position: fixed
-  bottom: 0
-  left: 0
-  background: var(--main-background)
-  width: 100%
-  display: flex
-  justify-content: space-around
-  padding: 0.5rem 1rem
-  display: none
-  grid-area: footer
 
 @media screen and (width <= 600px)
   .container
@@ -122,8 +115,6 @@
     display: none
   .sidebar
     display: none
-  .footer
-    display: flex
   .video
     width: 100%
   .mobilesidebar

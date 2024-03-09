@@ -18,21 +18,21 @@ const Navbar = ({ setAllVideos, children }) => {
         </ul>
         <ul className={styles.container__input}>
           <Search customStyle={styles.isDesktop__search} setAllVideos={setAllVideos} />
-          <Button customClass={styles.isDesktop} onClick={() => console.log('Mic')} type='button'>
+          <Button label='Talk to the microphone to search' customClass={styles.isDesktop} onClick={() => console.log('Mic')} type='button'>
             <MicIcon />
           </Button>
         </ul>
         <ul className={styles.container}>
-          <Button customClass={styles.isMobile__search} onClick={() => setMobileSearch(true)} type='menu'>
+          <Button label='Search videos' customClass={styles.isMobile__search} onClick={() => setMobileSearch(true)} type='menu'>
             <SearchIcon />
           </Button>
           {mobileSearch && <Search type='mobile' setMobileSearch={setMobileSearch} setAllVideos={setAllVideos} />}
-          <Button customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
+          <Button label='Talk to the microphone to search' customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
             <MicIcon />
           </Button>
           <SettingsMenu />
           <li className={styles.menu__item}>
-            <Button onClick={() => console.log('Sign in')} type='sign-in'>
+            <Button label='Sign in' onClick={() => console.log('Sign in')} type='sign-in'>
               <UserIcon />
               <span>Sign in</span>
             </Button>

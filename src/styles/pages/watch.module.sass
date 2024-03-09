@@ -25,6 +25,7 @@
   margin: 0 auto
 
 .video
+  position: relative
   grid-area: video
   z-index: 4
   max-height: 480px
@@ -34,3 +35,30 @@
   grid-area: videos
   width: fit-content
   max-width: 400px
+  &__tags
+    display: block
+
+@media screen and (width <= 1200px)
+  .container
+    grid-template-areas: "content content" "videos videos"
+    grid-template-columns: 1fr
+    max-width: 1200px
+    height: fit-content
+  .navbar
+    display: none
+  .content
+    padding: 0rem
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr 1fr
+    grid-template-areas: "video" "videos"
+    gap: 0px
+  .videos
+    max-width: auto
+    height: fit-content
+    margin-top: 1rem
+    &__tags
+      display: none
+  .video
+    display: block
+    &> *
+      border-radius: 0px !important

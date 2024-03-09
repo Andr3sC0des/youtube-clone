@@ -1,6 +1,7 @@
 import { MenuIcon } from '@/Icons/Icons'
 import Button from '@/components/Button'
 import Navbar from '@/components/Header/Navbar'
+import MobileNavbar from '@/components/MobileNavbar'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import styles from '@/styles/pages/notfound.module.sass'
 import Head from 'next/head'
@@ -14,9 +15,9 @@ const NotFound = () => {
       <Head>
         <title>404 Not Found</title>
       </Head>
-      <section className={styles.container}>
+      <section className={styles.navbar}>
         <Navbar>
-          <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
+          <Button label='Menu' onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
             <MenuIcon />
           </Button>
         </Navbar>
@@ -31,6 +32,7 @@ const NotFound = () => {
       <aside className={isSidebarOpen ? styles.aside : styles.aside__collapsed}>
         {isSidebarOpen ? <Sidebar /> : <Sidebar type='collapsed' />}
       </aside>
+      <MobileNavbar />
     </>
   )
 }

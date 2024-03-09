@@ -31,7 +31,7 @@ const Index = ({ video }) => {
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar setAllVideos={setAllVideos}>
-            <Button reference={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
+            <Button label='Menu' reference={buttonRef} onClick={() => setPopup(!popup)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
@@ -40,8 +40,10 @@ const Index = ({ video }) => {
           </PopupMenu>
         </header>
         <section className={styles.content}>
-          <article className={`liteYoutube ${styles.video}`}>
-            <lite-youtube videoid={video.id} />
+          <div>
+            <article className={`liteYoutube ${styles.video}`}>
+              <lite-youtube videoid={video.id} />
+            </article>
             <VideoInfo
               title={video.title}
               channel={video.name}
@@ -49,9 +51,11 @@ const Index = ({ video }) => {
               subscribers={video.subscribers}
               likes={video.likes}
             />
-          </article>
+          </div>
           <aside className={styles.videos}>
-            <AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} />
+            <div className={styles.videos__tags}>
+              <AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} />
+            </div>
             <AllMiniVideoCards videos={allVideos} />
           </aside>
         </section>

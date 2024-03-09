@@ -1,6 +1,6 @@
 @import "../var.css"
   
-.container
+.navbar
   display: grid
   grid-template-rows: var(--navbar-height) 1fr
 
@@ -56,3 +56,11 @@
     height: 100%
     top: var(--navbar-height)
     left: 0
+
+@media screen and (width <= 500px)
+  .navbar
+    display: none
+  .aside
+    display: none
+    &__collapsed
+      display: none

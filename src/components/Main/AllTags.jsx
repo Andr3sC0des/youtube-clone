@@ -52,25 +52,27 @@ const AllTags = ({ setSelectedTag, selectedTag }) => {
 
   return (
     <>
-      <div id='left' className={`${styles.alltags__arrow} ${styles.alltags__arrow__left}`}>
-        <Button onClick={() => handleToLeft()} type='button'>
-          <ToLeftIcon />
-        </Button>
-      </div>
-      <article ref={tagsRef} className={styles.alltags}>
-        {
+      <section className={styles.container}>
+        <div id='left' className={`${styles.alltags__arrow} ${styles.alltags__arrow__left}`}>
+          <Button label='Show more tags' onClick={() => handleToLeft()} type='button'>
+            <ToLeftIcon />
+          </Button>
+        </div>
+        <article ref={tagsRef} className={styles.alltags}>
+          {
           tags.map(tag => {
             return (
               <Tag key={tag} title={tag} selectedTag={selectedTag} setSelectedTag={setSelectedTag} />
             )
           })
-        }
-      </article>
-      <div id='right' className={`${styles.alltags__arrow} ${styles.alltags__arrow__right}`}>
-        <Button onClick={() => handleToRight()} type='button'>
-          <ToRightIcon />
-        </Button>
-      </div>
+          }
+        </article>
+        <div id='right' className={`${styles.alltags__arrow} ${styles.alltags__arrow__right}`}>
+          <Button label='Show more tags' onClick={() => handleToRight()} type='button'>
+            <ToRightIcon />
+          </Button>
+        </div>
+      </section>
     </>
   )
 }

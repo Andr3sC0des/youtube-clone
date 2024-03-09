@@ -14,6 +14,7 @@ const Tag = ({ title, setSelectedTag, selectedTag }) => {
   return (
     <>
       <button
+        aria-label={`${title} tag`}
         onClick={() => setSelectedTag(title)}
         className={handleClasses()}
       >{title}

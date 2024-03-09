@@ -1,7 +1,7 @@
-import { CommentIcon, HistoryIcon, HomeIcon, MenuIcon, SettingsIcon, ShareIcon, ShortLikeIcon, ShortUnlikeIcon, ShortsIcon, SubsIcon, YouIcon } from '@/Icons/Icons'
+import { CommentIcon, MenuIcon, SettingsIcon, ShareIcon, ShortLikeIcon, ShortUnlikeIcon } from '@/Icons/Icons'
 import Button from '@/components/Button'
 import Navbar from '@/components/Header/Navbar'
-import MenuMobileItem from '@/components/Sidebar/MenuMobileItem'
+import MobileNavbar from '@/components/MobileNavbar'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import UseGetShorts from '@/hooks/useGetShorts'
 import styles from '@/styles/pages/short.module.sass'
@@ -70,7 +70,7 @@ const Index = ({ id }) => {
       <section className={styles.container}>
         <header className={styles.navbar}>
           <Navbar>
-            <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
+            <Button label='Menu' onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
@@ -88,30 +88,30 @@ const Index = ({ id }) => {
                   }
                    <aside className={styles.mobilesidebar}>
                      <div className={styles.button}>
-                       <Button type='shorticon'>
+                       <Button label='Like' type='shorticon'>
                          <ShortLikeIcon />
                        </Button>
                        <span>714K</span>
                      </div>
                      <div className={styles.button}>
-                       <Button type='shorticon'>
+                       <Button label='Dislike' type='shorticon'>
                          <ShortUnlikeIcon />
                        </Button>
                        <span>Dislike</span>
                      </div>
                      <div className={styles.button}>
-                       <Button type='shorticon'>
+                       <Button label='Comment' type='shorticon'>
                          <CommentIcon />
                        </Button>
                        <span>1,331</span>
                      </div>
                      <div className={styles.button}>
-                       <Button type='shorticon'>
+                       <Button label='Share' type='shorticon'>
                          <ShareIcon />
                        </Button>
                        <span>Share</span>
                      </div>
-                     <Button type='shorticon'>
+                     <Button label='Settings' type='shorticon'>
                        <SettingsIcon />
                      </Button>
                      <img src={`https://unavatar.io/youtube/${short.name}`} alt='' />
@@ -119,30 +119,30 @@ const Index = ({ id }) => {
                  </article>
                  <aside className={styles.sidebar}>
                    <div className={styles.button}>
-                     <Button type='short'>
+                     <Button label='Like' type='short'>
                        <ShortLikeIcon />
                      </Button>
                      <span>714K</span>
                    </div>
                    <div className={styles.button}>
-                     <Button type='short'>
+                     <Button label='Dislike' type='short'>
                        <ShortUnlikeIcon />
                      </Button>
                      <span>Dislike</span>
                    </div>
                    <div className={styles.button}>
-                     <Button type='short'>
+                     <Button label='Comment' type='short'>
                        <CommentIcon />
                      </Button>
                      <span>1,331</span>
                    </div>
                    <div className={styles.button}>
-                     <Button type='short'>
+                     <Button label='Share' type='short'>
                        <ShareIcon />
                      </Button>
                      <span>Share</span>
                    </div>
-                   <Button type='short'>
+                   <Button label='Settings' type='short'>
                      <SettingsIcon />
                    </Button>
                    <img src={`https://unavatar.io/youtube/${short.name}`} alt='' />
@@ -155,14 +155,7 @@ const Index = ({ id }) => {
         <aside className={isSidebarOpen ? styles.aside : styles.aside__collapsed}>
           {isSidebarOpen ? <Sidebar /> : <Sidebar type='collapsed' />}
         </aside>
-
-        <footer className={styles.footer}>
-          <MenuMobileItem type='footer' title='Home' icon={<HomeIcon />} slug='/' />
-          <MenuMobileItem type='footer' title='Shorts' icon={<ShortsIcon />} slug='shorts' />
-          <MenuMobileItem type='footer' title='Subscriptions' icon={<SubsIcon />} slug='feed/subscriptions' />
-          <MenuMobileItem type='footer' title='You' icon={<YouIcon />} slug='feed/you' />
-          <MenuMobileItem type='footer' title='History' icon={<HistoryIcon />} slug='feed/history' />
-        </footer>
+        <MobileNavbar />
       </section>
     </>
   )

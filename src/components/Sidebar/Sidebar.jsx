@@ -22,7 +22,7 @@ const Sidebar = ({ type = 'normal', customStyle }) => {
           </GroupItems>
           <article className={styles.signin}>
             <p>Sign in to like videos, comment, and subscribe.</p>
-            <Button type='sign-in'>
+            <Button label='Sign in' type='sign-in'>
               <UserIcon />
               <span>Sign in</span>
             </Button>

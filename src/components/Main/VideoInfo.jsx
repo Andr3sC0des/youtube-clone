@@ -18,23 +18,23 @@ const VideoInfo = ({
               <h4 className={styles.channel__name}>{channel}</h4>
               <span className={styles.channel__subs}>{subscribers} subscribers</span>
             </div>
-            <Button color='white'>
+            <Button aria-label='Subscribe Button' color='white'>
               <span>Subscribe</span>
             </Button>
           </article>
           <article className={styles.actions}>
             <Button type='double'>
-              <button><LikeIcon /> 3.5K</button>
-              <button><DislikeIcon /></button>
+              <button aria-label='Like'><LikeIcon /> 3.5K</button>
+              <button aria-label='Dislike'><DislikeIcon /></button>
             </Button>
-            <Button type='action'><ShareIcon />
+            <Button label='Share video' type='action'><ShareIcon />
               <span>Share</span>
             </Button>
-            <Button type='action'>
+            <Button label='Clip video' type='action'>
               <ClipIcon />
               <span>Clip</span>
             </Button>
-            <Button type='action' customStyle={{ padding: '0px', height: '36px', width: '36px' }}>
+            <Button label='More actions' type='action' customStyle={{ padding: '0px', height: '36px', width: '36px' }}>
               <HorizontalDots />
             </Button>
           </article>

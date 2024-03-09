@@ -1,7 +1,7 @@
 import styles from './Button.module.sass'
 
 // types: button, menu, popup, sign-in
-const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, reference, customClass }) => {
+const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, reference, customClass, label = 'Button' }) => {
   const buttonStyles = () => {
     if (type === 'menu') return [styles.button, styles.menu, customClass].join(' ')
     if (type === 'popup') return [styles.button, styles.popup, customClass].join(' ')
@@ -24,6 +24,7 @@ const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {
   if (type === 'menu' || type === 'popup') {
     return (
       <button
+        aria-label={label}
         ref={reference}
         onClick={onClick}
         className={buttonStyles()}

@@ -47,7 +47,7 @@ const SettingsMenu = () => {
   return (
     <>
       <div className={styles.container}>
-        <Button onClick={() => setIsShow(!isShow)} reference={buttonRef} type='popup'><SettingsIcon /></Button>
+        <Button label='Open more settings' onClick={() => setIsShow(!isShow)} reference={buttonRef} type='popup'><SettingsIcon /></Button>
         {isShow &&
           <section ref={menuRef} className={styles.menu}>
             <GroupItems customClass={styles.menu__list}>
