@@ -11,7 +11,7 @@ const MiniVideoCard = ({ id, title, channel, views, publishedDate }) => {
           customStyle={{ maxWidth: '168px', borderRadius: '1rem', overflow: 'hidden' }}
           width='100%'
           height='100%'
-          src={`https://i.ytimg.com/vi_webp/${id}/maxresdefault.webp`}
+          src={`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`}
           alt={title}
         />
         <div className={styles.card__info}>
