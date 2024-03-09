@@ -19,6 +19,7 @@
   width: 315px 
   scroll-snap-align: start
   margin-bottom: 3rem
+  position: relative
 
 .button
   text-align: center
@@ -56,7 +57,24 @@
   &::-webkit-scrollbar 
       display: none
 
-
+.mobilesidebar
+  position: fixed
+  right: 0rem
+  bottom: 53px
+  padding: 1rem
+  width: 70px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: center
+  gap: 1rem
+  height: calc( 100vh - 53px)
+  height: calc( 100dvh - 53px)
+  display: none
+  &> img
+    width: 45px
+    height: 45px
+    border-radius: 0.5rem
 
 .aside
   position: relative
@@ -77,3 +95,36 @@
     height: 100%
     top: var(--navbar-height)
     left: 0
+
+
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  background: var(--main-background)
+  width: 100%
+  display: flex
+  justify-content: space-around
+  padding: 0.5rem 1rem
+  display: none
+  grid-area: footer
+
+@media screen and (width <= 600px)
+  .container
+    display: grid
+    grid-template-rows: 1fr 1fr
+    grid-template-areas: "content" "footer"
+    grid-template-columns: 1fr
+  .aside
+    &__collapsed
+      display: none
+  .navbar
+    display: none
+  .sidebar
+    display: none
+  .footer
+    display: flex
+  .video
+    width: 100%
+  .mobilesidebar
+    display: flex

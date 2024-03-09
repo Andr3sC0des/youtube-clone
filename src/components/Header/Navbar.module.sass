@@ -10,11 +10,17 @@
 .container
   display: flex
   gap: 1rem
-  justify-self: center
   align-items: center
   height: 100%
   list-style-type: none
-
+  &__input
+    width: 100%
+    display: flex
+    gap: 1rem
+    justify-content: center
+    align-items: center
+    height: 100%
+    list-style-type: none
 .menu
   &__icon
     padding: 0.5rem
@@ -31,3 +37,30 @@
     height: 100%
     display: block
     display: flex
+
+.isDesktop
+  display: block
+  &__search
+    display: flex !important
+.isMobile
+  display: none
+  &__search
+    display: none
+
+@media screen and ( width <= 1000px )
+  .isDesktop
+    display: none
+  .isMobile
+    display: block
+
+@media screen and ( width <= 600px)
+  .isDesktop
+    &__search
+      display: none !important
+  .isMobile
+    &__search
+      display: flex
+  .container
+    gap: 0rem
+    &__input
+      gap: 0rem

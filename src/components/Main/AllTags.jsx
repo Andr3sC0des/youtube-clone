@@ -28,17 +28,13 @@ const AllTags = ({ setSelectedTag, selectedTag }) => {
       if (tagsRef.current) {
         if (tagsRef.current.scrollLeft === 0) {
           leftArrow.style.display = 'none'
-          // tagsRef.current.style.paddingLeft = '0px'
         } else {
           leftArrow.style.display = 'block'
-          // tagsRef.current.style.paddingLeft = '0px'
         }
         if (tagsRef.current.scrollLeft !== 0 && (tagsRef.current.scrollLeft === tagsRef.current.scrollWidth - tagsRef.current.offsetWidth)) {
           rightArrow.style.display = 'none'
-          // tagsRef.current.style.paddingRight = '0px'
         } else {
           rightArrow.style.display = 'block'
-          // tagsRef.current.style.paddingRight = '0px'
         }
       }
     }

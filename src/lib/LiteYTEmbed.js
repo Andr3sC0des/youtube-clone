@@ -70,8 +70,8 @@ export class LiteYTEmbed extends window.HTMLElement {
     params.append('playlist', this.videoId)
 
     const iframeEl = document.createElement('iframe')
-    iframeEl.width = 560
-    iframeEl.height = 315
+    iframeEl.width = 315
+    iframeEl.height = 560
     iframeEl.title = this.playLabel
     iframeEl.allowFullscreen = false
     iframeEl.allow = 'accelerometer; autoplay; encrypted-media;'

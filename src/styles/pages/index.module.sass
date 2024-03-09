@@ -29,7 +29,7 @@
 .videos
   display: grid
   grid-area: videos
-  grid-template-columns: 1fr 1fr 1fr
+  grid-template-columns: repeat(auto-fit, minmax(320px , 1fr))
   gap: 15px
   padding: 1.5rem
 
@@ -64,3 +64,40 @@
     height: 100%
     top: var(--navbar-height)
     left: 0
+
+.isDesktop
+  display: block
+
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  background: var(--main-background)
+  width: 100%
+  display: flex
+  justify-content: space-around
+  padding: 0.5rem 2rem
+  display: none
+
+
+
+@media screen and ( width <= 500px  )
+  .isDesktop
+    display: none
+  .sidebar
+    display: none
+    &__collapsed
+      display: none
+  .container
+    &__collapsed
+      grid-template-columns: 1fr
+  .videos
+    grid-template-columns: 1fr
+  .tags
+    width: 100vw
+    &__collapsed
+      width: 100vw
+  .footer
+    display: flex
+  
+

@@ -1,16 +1,17 @@
 import styles from './Button.module.sass'
 
 // types: button, menu, popup, sign-in
-const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, reference }) => {
+const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {}, color, reference, customClass }) => {
   const buttonStyles = () => {
-    if (type === 'menu') return [styles.button, styles.menu].join(' ')
-    if (type === 'popup') return [styles.button, styles.popup].join(' ')
-    if (type === 'sign-in') return [styles.button, styles.signin].join(' ')
-    if (type === 'action') return [styles.button, styles.action].join(' ')
-    if (type === 'double') return [styles.button, styles.double].join(' ')
-    if (color === 'white') return [styles.button, styles.white].join(' ')
-    if (type === 'short') return [styles.button, styles.short].join(' ')
-    if (type === 'button') return styles.button
+    if (type === 'menu') return [styles.button, styles.menu, customClass].join(' ')
+    if (type === 'popup') return [styles.button, styles.popup, customClass].join(' ')
+    if (type === 'sign-in') return [styles.button, styles.signin, customClass].join(' ')
+    if (type === 'action') return [styles.button, styles.action, customClass].join(' ')
+    if (type === 'double') return [styles.button, styles.double, customClass].join(' ')
+    if (color === 'white') return [styles.button, styles.white, customClass].join(' ')
+    if (type === 'short') return [styles.button, styles.short, customClass].join(' ')
+    if (type === 'shorticon') return [styles.button, styles.shorticon, customClass].join(' ')
+    if (type === 'button') return [styles.button, customClass].join(' ')
   }
 
   if (type === 'double') {

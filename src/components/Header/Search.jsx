@@ -1,8 +1,9 @@
-import { SearchIcon } from '@/Icons/Icons'
+import { LeftArrowIcon, MicIcon, SearchIcon } from '@/Icons/Icons'
 import styles from './Search.module.sass'
 import { useState } from 'react'
+import Button from '../Button'
 
-const Search = ({ setAllVideos }) => {
+const Search = ({ setAllVideos, customStyle, type, setMobileSearch }) => {
   const [search, setSearch] = useState('')
 
   const handleSearch = (e) => {
@@ -37,9 +38,32 @@ const Search = ({ setAllVideos }) => {
       })
   }
 
+  if (type === 'mobile') {
+    return (
+      <form onSubmit={handleSearch} className={styles.mobile}>
+        <button className={styles.mobile__close} onClick={() => setMobileSearch(false)}><LeftArrowIcon /></button>
+
+        <div>
+          <input
+            className={styles.mobile__input}
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder='Search'
+            type='text'
+          />
+          <button className={styles.mobile__button}><SearchIcon /></button>
+        </div>
+
+        <Button customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
+          <MicIcon />
+        </Button>
+      </form>
+    )
+  }
+
   return (
     <>
-      <form onSubmit={handleSearch} className={styles.search}>
+      <form onSubmit={handleSearch} className={`${styles.search} ${customStyle}`}>
         <input
           value={search}
           onChange={e => setSearch(e.target.value)}

@@ -2,12 +2,13 @@ import Head from 'next/head'
 import styles from '@/styles/pages/index.module.sass'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import Navbar from '@/components/Header/Navbar'
-import { MenuIcon } from '@/Icons/Icons'
+import { HistoryIcon, HomeIcon, MenuIcon, ShortsIcon, SubsIcon, YouIcon } from '@/Icons/Icons'
 import { useEffect, useState } from 'react'
 import VideoCard from '@/components/Main/VideoCard'
 import Button from '@/components/Button'
 import UseChannels from '@/hooks/useChannels'
 import AllTags from '@/components/Main/AllTags'
+import MenuMobileItem from '@/components/Sidebar/MenuMobileItem'
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -16,6 +17,25 @@ const Index = () => {
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
+  }, [])
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 1000) {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  })
+
+  useEffect(() => {
+    if (window.innerWidth < 1000) {
+      setIsSidebarOpen(false)
+    }
   }, [])
 
   return (
@@ -28,7 +48,7 @@ const Index = () => {
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
           <Navbar setAllVideos={setAllVideos}>
-            <Button onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
+            <Button customClass={styles.isDesktop} onClick={() => setIsSidebarOpen(!isSidebarOpen)} type='menu'>
               <MenuIcon />
             </Button>
           </Navbar>
@@ -57,8 +77,15 @@ const Index = () => {
           <section className={styles.shorts} />
         </main>
         <aside className={isSidebarOpen ? styles.sidebar : styles.sidebar__collapsed}>
-          {isSidebarOpen ? <Sidebar /> : <Sidebar type='collapsed' />}
+          <Sidebar type={isSidebarOpen ? 'normal' : 'collapsed'} />
         </aside>
+        <footer className={styles.footer}>
+          <MenuMobileItem type='footer' title='Home' icon={<HomeIcon />} slug='/' />
+          <MenuMobileItem type='footer' title='Shorts' icon={<ShortsIcon />} slug='shorts' />
+          <MenuMobileItem type='footer' title='Subscriptions' icon={<SubsIcon />} slug='feed/subscriptions' />
+          <MenuMobileItem type='footer' title='You' icon={<YouIcon />} slug='feed/you' />
+          <MenuMobileItem type='footer' title='History' icon={<HistoryIcon />} slug='feed/history' />
+        </footer>
       </section>
     </>
   )

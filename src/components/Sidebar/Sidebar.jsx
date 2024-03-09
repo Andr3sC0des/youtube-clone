@@ -5,11 +5,11 @@ import GroupItems from './GroupItems'
 import Button from '../Button'
 import MenuMobileItem from './MenuMobileItem'
 
-const Sidebar = ({ type = 'normal' }) => {
+const Sidebar = ({ type = 'normal', customStyle }) => {
   return (
     <>
       {
-      type === 'normal' &&
+      (type === 'normal') &&
         <section className={styles.sidebar}>
           <GroupItems>
             <MenuItem icon={<HomeIcon />} title='Home' />
@@ -37,7 +37,7 @@ const Sidebar = ({ type = 'normal' }) => {
         </section>
      }
       {
-      type === 'collapsed' &&
+      (type === 'collapsed') &&
         <section className={styles.collapsed}>
           <MenuMobileItem title='Home' icon={<HomeIcon />} slug='/' />
           <MenuMobileItem title='Shorts' icon={<ShortsIcon />} slug='shorts' />

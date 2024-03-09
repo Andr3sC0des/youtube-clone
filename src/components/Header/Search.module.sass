@@ -3,7 +3,7 @@
 .search
   border-radius: 2rem
   height: 40px
-  width: 600px
+  width: 60%
   display: flex
   justify-content: center
   align-items: center
@@ -36,4 +36,56 @@
     cursor: pointer
     border-top-right-radius: 2rem
     border-bottom-right-radius: 2rem
-    
+
+.mobile
+  position: absolute
+  display: flex
+  width: 100%
+  top: 0
+  left: 0
+  height: var(--navbar-height)
+  z-index: 3
+  justify-content: center
+  align-items: center
+  height: 56px
+  background: var(--main-background)
+  gap: 1rem
+  padding: 0rem 1rem
+  & svg
+    width: 24px
+    height: 24px
+  &> div
+    display: flex
+    justify-content: center
+    align-items: center
+  &__input
+    position: relative
+    color: var(--main-color)
+    padding-left: 1rem
+    font-size: 1rem
+    outline: 1px solid var(--gray-border)
+    background: var(--main-background)
+    height: 40px
+    width: 100%
+    border: none
+    border-top-left-radius: 2rem
+    border-bottom-left-radius: 2rem
+  &__close
+    background: var(--main-background)
+    border: none
+    cursor: pointer
+    &> svg
+      fill: #fff
+  &__button
+    color: var(--main-color)
+    background: var(--secundary-background)
+    border: none
+    fill: var(--main-color)
+    height: 40px
+    width: 65px
+    cursor: pointer
+    outline: 1px solid var(--gray-border)
+    border-top-right-radius: 2rem
+    border-bottom-right-radius: 2rem
+    &> svg
+      fill: var(--main-color)
