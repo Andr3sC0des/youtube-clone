@@ -20,15 +20,14 @@ const Index = () => {
   }, [])
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1000) {
-        setIsSidebarOpen(false)
-      }
-    }
+    window.matchMedia('(width <= 1000px)').addEventListener('change', e => {
+      setIsSidebarOpen(false)
+    })
 
-    window.addEventListener('resize', handleResize)
     return () => {
-      window.removeEventListener('resize', handleResize)
+      window.matchMedia('(width <= 1000px)').removeEventListener('change', e => {
+        setIsSidebarOpen(false)
+      })
     }
   })
 
