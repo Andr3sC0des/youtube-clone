@@ -1,12 +1,11 @@
-import UseTags from '@/hooks/useTags'
 import { useEffect, useRef } from 'react'
 import styles from './AllTags.module.sass'
 import Tag from './Tag'
 import Button from '../Button'
 import { ToLeftIcon, ToRightIcon } from '@/Icons/Icons'
+import tags from '@/db/tags.json'
 
 const AllTags = ({ setSelectedTag, selectedTag }) => {
-  const [tags] = UseTags()
   const tagsRef = useRef(null)
 
   const handleToLeft = () => {
