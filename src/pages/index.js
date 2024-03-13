@@ -9,6 +9,7 @@ import Button from '@/components/Button'
 import UseChannels from '@/hooks/useChannels'
 import AllTags from '@/components/Main/AllTags'
 import MobileNavbar from '@/components/MobileNavbar'
+import MobileVideoCard from '@/components/Main/MobileVideoCard'
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -61,6 +62,23 @@ const Index = () => {
             allVideos.map(video => {
               return (
                 <VideoCard
+                  id={video.video.id}
+                  key={video.video.id}
+                  channel={video.name}
+                  title={video.video.title}
+                  views={video.video.views}
+                  publishedDate={video.video.publishedDate}
+                  duration={video.video.duration}
+                />
+              )
+            })
+            }
+          </section>
+          <section className={styles.mobile__videos}>
+            {
+            allVideos.map(video => {
+              return (
+                <MobileVideoCard
                   id={video.video.id}
                   key={video.video.id}
                   channel={video.name}
