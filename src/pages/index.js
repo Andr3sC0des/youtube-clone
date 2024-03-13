@@ -44,6 +44,13 @@ const Index = () => {
         <title>YouTube</title>
         <meta name='description' content='Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.' />
         <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+        {
+          allVideos.slice(0, 3).map(video => {
+            return (
+              <link key={video.video.id} rel='preload' fetchpriority='high' as='image' href={`https://i.ytimg.com/vi/${video.video.id}/hqdefault.webp`} type='image/webp' />
+            )
+          })
+        }
       </Head>
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
