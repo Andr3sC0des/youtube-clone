@@ -71,9 +71,12 @@ $ npm run dev
 $ yarn dev
 ```
 
-## Built With
+## 🛠️ Stack
 
-- JavaScript
-- Next.js
-- Sass
-- CSS Modules
+- [![Next.js][next-badge]][next-url] - The full-stack React framework for the web.
+- [![Sass][sass-badge]][sass-url] - A utility-first CSS framework for rapidly building custom designs.
+
+[next-url]: https://nextjs.org/
+[next-badge]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=vercel&logoColor=ffffff
+[sass-url]: https://sass-lang.com/
+[sass-badge]: https://img.shields.io/badge/Sass-bf4080?style=for-the-badge&logo=sass&logoColor=ffffff
