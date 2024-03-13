@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './MobileVideoCard.module.sass'
 import VideoDetails from './VideoDetails'
-import ImageSkeleton from '../ImageSkeleton'
+// import ImageSkeleton from '../ImageSkeleton'
 
 const MobileVIdeoCard = ({ id, title, views, publishedDate, channel, duration }) => {
   return (
