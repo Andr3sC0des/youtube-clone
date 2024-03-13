@@ -10,13 +10,13 @@ const MobileVIdeoCard = ({ id, title, views, publishedDate, channel, duration })
         <Link href={`/watch?v=${id}`} className={styles.card} rel='noreferrer'>
           <div className={styles.card__thumbnail}>
             <div className={styles.card__img}>
-              <ImageSkeleton
+              <img className={styles.image} src={`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`} alt={title} />
+              {/* <ImageSkeleton
                 id={id}
+                aspectRatio='1.73'
                 alt={title}
-                width='100%'
-                height='100%'
                 src={`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`}
-              />
+              /> */}
             </div>
             <span className={styles.card__duration}>{duration}</span>
           </div>

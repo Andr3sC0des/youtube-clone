@@ -17,7 +17,7 @@ const ImageSkeleton = ({
     const image = document.querySelector(`#${id}`)
     const addImage = () => {
       image.src = src
-      setIsLoading(false)
+      setIsLoading(true)
     }
 
     img.addEventListener('load', addImage)
