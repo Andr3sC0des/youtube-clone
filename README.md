@@ -29,17 +29,17 @@ This YouTube clone is a challenging project aimed at replicating some of the fea
 
 ### Mobile Analytics 
 
-<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/zquubgqhzc?form_factor=mobile"><img src="screenshots/mobile-analytics.png"></a>
+<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/flqgfg4u02?form_factor=mobile"><img src=".github/images/mobile-analytics.png"></a>
 
 ### Desktop Analytics
 
-<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/zquubgqhzc?form_factor=desktop"><img src="screenshots/desktop-analytics.png"></a>
+<a href="https://pagespeed.web.dev/analysis/https-youtube-clone-dun-sigma-vercel-app/flqgfg4u02?form_factor=desktop"><img src=".github/images/desktop-analytics.png"></a>
 
 ## Screenshots
 
 ### Youtube Main Page
 
-![YouTube Main Page](screenshots/main-page.png)
+![YouTube Main Page](.github/images/main-page.png)
 
 <!-- 
 Youtube Mobile Main Page
