@@ -69,7 +69,7 @@ export default Index
 export async function getServerSideProps (ctx) {
   const { query } = ctx
 
-  const response = await fetch('https://youtube-clone-dun-sigma.vercel.app/api/channels')
+  const response = await fetch(`${process.env.HOST_URL}/api/channels`)
   const data = await response.json()
   const videoArray = data.channels.flatMap(channel => {
     if (channel.videos.find(video => video.id === query.v)) {
