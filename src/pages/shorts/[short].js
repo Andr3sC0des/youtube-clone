@@ -45,7 +45,6 @@ const Index = ({ id, title }) => {
       const scrollPosition = container.scrollTop
       const videoHeight = container.clientHeight
       const currentIndex = Math.floor(scrollPosition / videoHeight)
-
       setCurrentVideo(allShorts[currentIndex].shorts.id)
 
       if (currentIndex < allShorts.length) {
@@ -83,7 +82,6 @@ const Index = ({ id, title }) => {
         <main ref={shortsRef} id='allShorts' className={styles.content}>
           {
            allShorts.map(short => {
-             console.log(short)
              return (
                <section className={styles.videocontainer} key={short.shorts.id}>
                  <article id={short.shorts.id} className={`liteYoutube ${styles.video}`}>
@@ -173,9 +171,9 @@ export default Index
 
 export async function getServerSideProps (ctx) {
   const { query } = ctx
-  console.log(query)
 
-  const response = await fetch('https://youtube-clone-dun-sigma.vercel.app/api/channels')
+  // const response = await fetch('https://youtube-clone-dun-sigma.vercel.app/api/channels')
+  const response = await fetch('http://127.0.0.1:3000/api/channels')
   const data = await response.json()
   const videoArray = data.channels.flatMap(channel => {
     if (channel.shorts.find(short => short.id === query.short)) {
@@ -188,9 +186,7 @@ export async function getServerSideProps (ctx) {
 
     return null
   })
-
   const short = videoArray.filter(video => video !== null)[0]
-  console.log(short)
 
   return {
     props: {
