@@ -11,12 +11,6 @@ const MobileVIdeoCard = ({ id, title, views, publishedDate, channel, duration })
           <div className={styles.card__thumbnail}>
             <div className={styles.card__img}>
               <img className={styles.image} src={`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`} alt={title} />
-              {/* <ImageSkeleton
-                id={id}
-                aspectRatio='1.73'
-                alt={title}
-                src={`https://i.ytimg.com/vi_webp/${id}/hqdefault.webp`}
-              /> */}
             </div>
             <span className={styles.card__duration}>{duration}</span>
           </div>
