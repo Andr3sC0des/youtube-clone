@@ -8,7 +8,7 @@ const VideoCard = ({ id, title, views, publishedDate, channel, duration }) => {
       <Link href={`/watch?v=${id}`} className={styles.card} rel='noreferrer'>
         <div className={styles.card__thumbnail}>
           <div className={styles.card__img}>
-            <article className='liteYoutube'>
+            <article className={`liteYoutube ${styles.card__video}`}>
               <lite-youtube videoid={id} activeButton autoplay />
             </article>
           </div>
