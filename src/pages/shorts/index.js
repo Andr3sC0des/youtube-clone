@@ -13,7 +13,7 @@ export default Index
 export async function getServerSideProps () {
   return {
     redirect: {
-      destination: '/shorts/Ah7-PPjQ5Ls',
+      destination: '/shorts/GEXlG_fQrbg',
       permanent: false
     }
   }
