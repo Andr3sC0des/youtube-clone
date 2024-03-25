@@ -3,7 +3,7 @@ import styles from '@/styles/pages/index.module.sass'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import Navbar from '@/components/Header/Navbar'
 import { MenuIcon } from '@/Icons/Icons'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import VideoCard from '@/components/Main/VideoCard'
 import Button from '@/components/Button'
 import UseChannels from '@/hooks/useChannels'
@@ -15,6 +15,8 @@ const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [selectedTag, setSelectedTag] = useState('All')
   const { allVideos, setAllVideos } = UseChannels({ selectedTag })
+  const [videosInScreen, setVideosInScreen] = useState(6)
+  const IsInScreenRef = useRef(null)
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
@@ -38,6 +40,31 @@ const Index = () => {
     }
   }, [])
 
+  const callback = (entries) => {
+    if (IsInScreenRef.current) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVideosInScreen(prevState => prevState + 6)
+        }
+      })
+    }
+  }
+
+  const options = {
+    root: null,
+    rootMargin: '20px',
+    threshold: 1.0
+  }
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(callback, options)
+    if (IsInScreenRef) observer.observe(IsInScreenRef.current)
+
+    return () => {
+      if (IsInScreenRef) observer.unobserve(IsInScreenRef.current)
+    }
+  }, [IsInScreenRef])
+
   return (
     <>
       <Head>
@@ -59,7 +86,7 @@ const Index = () => {
             : <section className={styles.tags__collapsed}><AllTags setSelectedTag={setSelectedTag} selectedTag={selectedTag} /></section>}
           <section className={styles.videos}>
             {
-            allVideos.map(video => {
+            allVideos.slice(0, videosInScreen).map((video, index) => {
               return (
                 <VideoCard
                   id={video.video.id}
@@ -73,10 +100,11 @@ const Index = () => {
               )
             })
             }
+            <div ref={IsInScreenRef} />
           </section>
           <section className={styles.mobile__videos}>
             {
-            allVideos.map(video => {
+            allVideos.slice(0, videosInScreen).map(video => {
               return (
                 <MobileVideoCard
                   id={video.video.id}
