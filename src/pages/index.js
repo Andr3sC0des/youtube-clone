@@ -61,7 +61,7 @@ const Index = () => {
     if (IsInScreenRef) observer.observe(IsInScreenRef.current)
 
     return () => {
-      if (IsInScreenRef) observer.unobserve(IsInScreenRef.current)
+      if (IsInScreenRef.current) observer.unobserve(IsInScreenRef.current)
     }
   }, [IsInScreenRef])
 
