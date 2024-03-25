@@ -6,6 +6,7 @@
   color: var(--main-color)
   gap: 1rem
   z-index: 4
+  min-width: 380px
   &__image
     height: 100%
     max-width: 165px
@@ -28,3 +29,7 @@
     color: var(--gray-color)
     font-size: 12px
     
+@media screen and ( width <= 380px  )
+  .card
+    min-width: 100%
+  
