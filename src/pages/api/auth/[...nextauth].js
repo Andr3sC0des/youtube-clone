@@ -2,7 +2,6 @@ import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const authOptions = {
-  debug: true,
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/auth/signin/identifier',
