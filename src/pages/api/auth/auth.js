@@ -4,10 +4,11 @@ const credentialsAuth = (req, res) => {
     return
   }
   if (req.body.password === process.env.AUTH_LOGIN_SECRET && req.body.username === process.env.AUTH_LOGIN_USER) {
-    const youtubeUser = {
-      name: 'YoutubeClone'
+    const user = {
+      username: req.body.username,
+      following: ['Kassiapiano']
     }
-    return res.status(200).json(youtubeUser)
+    return res.status(200).json(user)
   }
 
   res.status(401).end()
