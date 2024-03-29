@@ -1,0 +1,47 @@
+@import '../../styles/var.css'
+  
+.avatar 
+  width: 30px
+  height: 30px
+  border: none
+  cursor: pointer
+  background: transparent
+  position: relative
+  &> img
+    width: 100%
+    border-radius: 50%
+    height: 100%
+    display: block
+
+.menu
+  position: absolute
+  background: var(--secundary-background)
+  padding: 1rem 0rem
+  border-radius: 1rem
+  right: calc(100% + 20px)
+  border: 1px solid var(--gray-border)
+  top: 0
+  height: calc(100vh - 15px)
+  overflow: scroll
+  width: 300px
+  &__list
+    padding: 0
+    padding: 0.5rem 0rem
+  &__link
+    text-decoration: none
+    color: #fff
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    padding-left: 1.5rem
+  &__item
+    min-height: 35px
+    list-style-type: none
+    padding: 0
+    padding-left: 1.5rem
+    border-radius: 0
+    width: 100%
+    &:hover
+      background: var(--gray-hover)

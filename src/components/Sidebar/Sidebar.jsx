@@ -4,8 +4,11 @@ import styles from './Sidebar.module.sass'
 import GroupItems from './GroupItems'
 import Button from '../Button'
 import MenuMobileItem from './MenuMobileItem'
+import { signIn, useSession } from 'next-auth/react'
 
 const Sidebar = ({ type = 'normal', customStyle }) => {
+  const { data: session } = useSession()
+
   return (
     <>
       {
@@ -20,13 +23,18 @@ const Sidebar = ({ type = 'normal', customStyle }) => {
             <MenuItem icon={<YouIcon />} title='You' slug='feed/you' />
             <MenuItem icon={<HistoryIcon />} title='History' slug='feed/history' />
           </GroupItems>
-          <article className={styles.signin}>
-            <p>Sign in to like videos, comment, and subscribe.</p>
-            <Button label='Sign in' type='sign-in'>
-              <UserIcon />
-              <span>Sign in</span>
-            </Button>
-          </article>
+          {
+            session
+              ? ''
+              : <article className={styles.signin}>
+                <p>Sign in to like videos, comment, and subscribe.</p>
+                <Button onClick={() => signIn()} label='Sign in' type='sign-in'>
+                  <UserIcon />
+                  <span>Sign in</span>
+                </Button>
+              </article>
+          }
+
           <GroupItems title='Explore'>
             <MenuItem icon={<TrendIcon />} title='Trending' />
             <MenuItem icon={<MusicIcon />} title='Music' />

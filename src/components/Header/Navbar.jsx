@@ -5,10 +5,12 @@ import Search from './Search'
 import Button from '../Button'
 import SettingsMenu from './SettingsMenu'
 import { useState } from 'react'
+import { useSession, signIn, signOut } from 'next-auth/react'
+import ProfileMenu from './ProfileMenu'
 
 const Navbar = ({ setAllVideos, children }) => {
   const [mobileSearch, setMobileSearch] = useState(false)
-
+  const { data: session } = useSession()
   return (
     <>
       <section className={styles.navbar}>
@@ -30,12 +32,13 @@ const Navbar = ({ setAllVideos, children }) => {
           <Button label='Talk to the microphone to search' customClass={styles.isMobile} onClick={() => console.log('Mic')} type='menu'>
             <MicIcon />
           </Button>
-          <SettingsMenu />
+          {session ? '' : <SettingsMenu />}
           <div className={styles.menu__item}>
-            <Button label='Sign in' onCdivck={() => console.log('Sign in')} type='sign-in'>
-              <UserIcon />
-              <span>Sign in</span>
-            </Button>
+            {
+              session
+                ? <ProfileMenu />
+                : <Button label='Sign In' onClick={() => signIn()} type='sign-in'><UserIcon /><span>Sign in</span></Button>
+            }
           </div>
         </div>
       </section>

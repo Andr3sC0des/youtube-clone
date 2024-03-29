@@ -15,7 +15,7 @@ const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
   const [selectedTag, setSelectedTag] = useState('All')
   const { allVideos, setAllVideos } = UseChannels({ selectedTag })
-  const [videosInScreen, setVideosInScreen] = useState(6)
+  const [videosInScreen, setVideosInScreen] = useState(9)
   const IsInScreenRef = useRef(null)
 
   useEffect(() => {

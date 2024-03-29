@@ -3,6 +3,7 @@ import '@fontsource/roboto/400.css'
 import { useEffect, useState } from 'react'
 import { popupContext } from '@/context/popupContext'
 import { themeContext } from '@/context/themeContext'
+import { SessionProvider } from 'next-auth/react'
 
 export default function App ({ Component, pageProps }) {
   const [popup, setPopup] = useState(false)
@@ -28,11 +29,13 @@ export default function App ({ Component, pageProps }) {
 
   return (
     <>
-      <themeContext.Provider value={[theme, setTheme]}>
-        <popupContext.Provider value={[popup, setPopup]}>
-          <Component {...pageProps} />
-        </popupContext.Provider>
-      </themeContext.Provider>
+      <SessionProvider session={pageProps.session}>
+        <themeContext.Provider value={[theme, setTheme]}>
+          <popupContext.Provider value={[popup, setPopup]}>
+            <Component {...pageProps} />
+          </popupContext.Provider>
+        </themeContext.Provider>
+      </SessionProvider>
     </>
   )
 }

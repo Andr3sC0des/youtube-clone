@@ -172,7 +172,7 @@ export default Index
 export async function getServerSideProps (ctx) {
   const { query } = ctx
 
-  const response = await fetch(`${process.env.HOST_URL}/api/channels`)
+  const response = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/channels`)
   const data = await response.json()
   const videoArray = data.channels.flatMap(channel => {
     if (channel.shorts.find(short => short.id === query.short)) {
