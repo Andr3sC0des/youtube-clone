@@ -13,7 +13,7 @@ export const authOptions = {
       name: 'YoutubeClone',
       async authorize (credentials, req) {
         try {
-          const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/auth/auth`, {
+          const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/auth`, {
             method: 'POST',
             body: JSON.stringify(credentials),
             headers: { 'Content-Type': 'application/json' }
@@ -24,7 +24,6 @@ export const authOptions = {
           }
 
           const user = await res.json()
-          console.log(user)
           return user
         } catch (error) {
           console.error(error)
