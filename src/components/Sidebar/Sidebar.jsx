@@ -6,6 +6,18 @@ import Button from '../Button'
 import MenuMobileItem from './MenuMobileItem'
 import { signIn, useSession } from 'next-auth/react'
 
+const ButtonSignIn = () => {
+  return (
+    <article className={styles.signin}>
+      <p>Sign in to like videos, comment, and subscribe.</p>
+      <Button onClick={() => signIn()} label='Sign in' type='sign-in'>
+        <UserIcon />
+        <span>Sign in</span>
+      </Button>
+    </article>
+  )
+}
+
 const Sidebar = ({ type = 'normal', customStyle }) => {
   const { data: session } = useSession()
 
@@ -23,18 +35,7 @@ const Sidebar = ({ type = 'normal', customStyle }) => {
             <MenuItem icon={<YouIcon />} title='You' slug='feed/you' />
             <MenuItem icon={<HistoryIcon />} title='History' slug='feed/history' />
           </GroupItems>
-          {
-            session
-              ? ''
-              : <article className={styles.signin}>
-                <p>Sign in to like videos, comment, and subscribe.</p>
-                <Button onClick={() => signIn()} label='Sign in' type='sign-in'>
-                  <UserIcon />
-                  <span>Sign in</span>
-                </Button>
-              </article>
-          }
-
+          {session ? '' : <ButtonSignIn />}
           <GroupItems title='Explore'>
             <MenuItem icon={<TrendIcon />} title='Trending' />
             <MenuItem icon={<MusicIcon />} title='Music' />

@@ -5,7 +5,7 @@ import Search from './Search'
 import Button from '../Button'
 import SettingsMenu from './SettingsMenu'
 import { useState } from 'react'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSession, signIn } from 'next-auth/react'
 import ProfileMenu from './ProfileMenu'
 
 const Navbar = ({ setAllVideos, children }) => {
