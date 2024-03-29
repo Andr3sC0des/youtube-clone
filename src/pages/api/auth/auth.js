@@ -1,11 +1,12 @@
 const credentialsAuth = (req, res) => {
+  console.log(req.body)
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' })
   }
-
-  if (req.body.password === process.env.AUTH_LOGIN_SECRET && req.body.username === process.env.AUTH_LOGIN_USER) {
+  if (req.body.username === process.env.AUTH_LOGIN_USER && req.body.password === process.env.AUTH_LOGIN_SECRET) {
     const user = {
       username: req.body.username,
+      avatar: '',
       following: ['Kassiapiano'],
       likedVideos: []
     }
