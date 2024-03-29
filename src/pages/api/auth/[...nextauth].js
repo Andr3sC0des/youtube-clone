@@ -12,8 +12,7 @@ export const authOptions = {
       name: 'YoutubeClone',
       async authorize (credentials, req) {
         try {
-          console.log(credentials)
-          const res = await fetch('https://youtube-clone-dun-sigma.vercel.app/api/auth/auth', {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/auth/auth`, {
             method: 'POST',
             body: JSON.stringify(credentials),
             headers: { 'Content-Type': 'application/json' }

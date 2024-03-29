@@ -1,17 +1,18 @@
 const credentialsAuth = (req, res) => {
   if (req.method !== 'POST') {
-    res.status(405).end()
-    return
+    return res.status(405).json({ error: 'Method Not Allowed' })
   }
+
   if (req.body.password === process.env.AUTH_LOGIN_SECRET && req.body.username === process.env.AUTH_LOGIN_USER) {
     const user = {
       username: req.body.username,
-      following: ['Kassiapiano']
+      following: ['Kassiapiano'],
+      likedVideos: []
     }
     return res.status(200).json(user)
+  } else {
+    return res.status(401).json({ error: 'Invalid credentials' })
   }
-
-  res.status(401).end()
 }
 
 export default credentialsAuth
