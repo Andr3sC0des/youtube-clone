@@ -21,7 +21,7 @@ const Identifier = () => {
       </Head>
       <main className={styles.content}>
         <section className={styles.banner}>
-          <p>This is not gmail, it only exists 1 account with username: admin, password: 1234</p>
+          <p>Please note that this is not Gmail. The default login credentials are as follows: <strong>Username: admin</strong>, <strong>Password: 1234</strong></p>
         </section>
         <article className={styles.card}>
           <aside className={styles.aside}>
