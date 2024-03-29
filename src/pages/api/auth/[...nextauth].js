@@ -11,17 +11,22 @@ export const authOptions = {
     CredentialsProvider({
       name: 'YoutubeClone',
       async authorize (credentials, req) {
-        console.log(credentials)
-        const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/auth/auth`, {
-          method: 'POST',
-          body: JSON.stringify(credentials),
-          headers: { 'Content-Type': 'application/json' }
-        })
-        const user = await res.json()
-        if (res.ok && user) {
+        try {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/auth/auth`, {
+            method: 'POST',
+            body: JSON.stringify(credentials),
+            headers: { 'Content-Type': 'application/json' }
+          })
+
+          if (!res.ok) {
+            throw new Error('Failed to authenticate')
+          }
+
+          const user = await res.json()
           return user
+        } catch (error) {
+          throw new Error('Authentication error: ' + error.message)
         }
-        return null
       }
     })
   ]
