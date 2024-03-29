@@ -11,6 +11,7 @@ export const authOptions = {
     CredentialsProvider({
       name: 'YoutubeClone',
       async authorize (credentials, req) {
+        console.log(credentials)
         const res = await fetch(`${process.env.NEXT_PUBLIC_HOST_URL}/api/auth/auth`, {
           method: 'POST',
           body: JSON.stringify(credentials),
