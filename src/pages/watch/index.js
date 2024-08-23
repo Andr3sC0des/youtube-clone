@@ -11,16 +11,33 @@ import { popupContext } from '@/context/popupContext'
 import Sidebar from '@/components/Sidebar/Sidebar'
 import PopupMenu from '@/components/PopupMenu'
 import AllTags from '@/components/Main/AllTags'
+import { useSession } from 'next-auth/react'
+import { LIKE } from '@/consts/LIKE'
 
 const Index = ({ video }) => {
   const [popup, setPopup] = useContext(popupContext)
   const buttonRef = useRef(null)
   const [selectedTag, setSelectedTag] = useState('All')
   const { allVideos, setAllVideos } = UseChannels({ selectedTag })
+  const { data: session } = useSession()
+  const [likeState, setLikeState] = useState(LIKE.nolike)
+  const [subscribed, setSubscribed] = useState(false)
 
   useEffect(() => {
     import('@/lib/LiteYTEmbed')
   }, [])
+
+  useEffect(() => {
+    if (session && session.user.likedVideos.includes(video.id)) {
+      setLikeState(LIKE.liked)
+    }
+  }, [session])
+
+  useEffect(() => {
+    if (session && session.user.following.includes(video.name)) {
+      setSubscribed(true)
+    }
+  }, [session])
 
   return (
     <>
@@ -50,6 +67,10 @@ const Index = ({ video }) => {
               views={video.views}
               subscribers={video.subscribers}
               likes={video.likes}
+              likeState={likeState}
+              setLikeState={setLikeState}
+              subscribed={subscribed}
+              setSubscribed={setSubscribed}
             />
           </div>
           <aside className={styles.videos}>

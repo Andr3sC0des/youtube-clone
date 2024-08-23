@@ -11,6 +11,7 @@ import ProfileMenu from './ProfileMenu'
 const Navbar = ({ setAllVideos, children }) => {
   const [mobileSearch, setMobileSearch] = useState(false)
   const { data: session } = useSession()
+
   return (
     <>
       <section className={styles.navbar}>
@@ -36,7 +37,7 @@ const Navbar = ({ setAllVideos, children }) => {
           <div className={styles.menu__item}>
             {
               session
-                ? <ProfileMenu />
+                ? <ProfileMenu channel={session?.user?.name} />
                 : <Button label='Sign In' onClick={() => signIn()} type='sign-in'><UserIcon /><span>Sign in</span></Button>
             }
           </div>

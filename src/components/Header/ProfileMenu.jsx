@@ -7,7 +7,7 @@ import { signOut } from 'next-auth/react'
 import ProfileInfo from './ProfileInfo'
 import { themeContext } from '@/context/themeContext'
 
-const ProfileMenu = () => {
+const ProfileMenu = ({ channel }) => {
   const [isMenu, setIsMenu] = useState(false)
   const menuRef = useRef()
   const buttonRef = useRef()
@@ -57,7 +57,7 @@ const ProfileMenu = () => {
         ref={buttonRef}
         className={styles.avatar}
       >
-        <img src='https://unavatar.io/github/andr3sc0des' alt='YouTube Avatar Account' />
+        <img src={`https://unavatar.io/github/${channel}`} alt='YouTube Avatar Account' />
         {
           isMenu &&
             <section ref={menuRef} className={styles.menu}>

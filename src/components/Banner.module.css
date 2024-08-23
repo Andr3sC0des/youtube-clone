@@ -1,0 +1,30 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(62, 166, 255);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 200;
+  display: block;
+  text-align: center;
+}
+.icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+}

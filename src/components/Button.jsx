@@ -9,6 +9,7 @@ const Button = ({ children = 'Button', type = 'button', onClick, customStyle = {
     if (type === 'action') return [styles.button, styles.action, customClass].join(' ')
     if (type === 'double') return [styles.button, styles.double, customClass].join(' ')
     if (color === 'white') return [styles.button, styles.white, customClass].join(' ')
+    if (color === 'dark') return [styles.button, styles.dark, customClass].join(' ')
     if (type === 'short') return [styles.button, styles.short, customClass].join(' ')
     if (type === 'shorticon') return [styles.button, styles.shorticon, customClass].join(' ')
     if (type === 'button') return [styles.button, customClass].join(' ')

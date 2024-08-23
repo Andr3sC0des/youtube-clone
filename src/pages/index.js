@@ -10,6 +10,7 @@ import UseChannels from '@/hooks/useChannels'
 import AllTags from '@/components/Main/AllTags'
 import MobileNavbar from '@/components/MobileNavbar'
 import MobileVideoCard from '@/components/Main/MobileVideoCard'
+import Banner from '@/components/Banner'
 
 const Index = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true)
@@ -72,6 +73,7 @@ const Index = () => {
         <meta name='description' content='Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.' />
         <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
       </Head>
+      <Banner />
       <section className={isSidebarOpen ? styles.container : styles.container__collapsed}>
         <header className={styles.navbar}>
           <Navbar setAllVideos={setAllVideos}>

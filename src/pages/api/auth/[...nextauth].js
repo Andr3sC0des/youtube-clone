@@ -9,28 +9,34 @@ export const authOptions = {
   },
   providers: [
     CredentialsProvider({
-      name: 'YoutubeClone',
+      name: 'Credentials',
       async authorize (credentials, req) {
-        try {
-          const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/auth`, {
-            method: 'POST',
-            body: JSON.stringify(credentials),
-            headers: { 'Content-Type': 'application/json' }
-          })
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/auth/auth`, {
+          method: 'POST',
+          body: JSON.stringify(credentials),
+          headers: { 'Content-Type': 'application/json' }
+        })
 
-          if (!res.ok) {
-            throw new Error('Failed to authenticate')
-          }
+        const user = await res.json()
 
-          const user = await res.json()
+        if (res.ok && user) {
           return user
-        } catch (error) {
-          console.error(error)
-          throw new Error('Authentication error: ' + error.message)
         }
+
+        return null
       }
     })
-  ]
+  ],
+  callbacks: {
+    async session ({ session, token }) {
+      if (token) session.user = token.user
+      return session
+    },
+    async jwt ({ token, user }) {
+      if (user) token.user = user
+      return token
+    }
+  }
 }
 
 export default NextAuth(authOptions)

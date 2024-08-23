@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+
 const defaultOptions = {
   root: null,
   rootMargin: '20px',
